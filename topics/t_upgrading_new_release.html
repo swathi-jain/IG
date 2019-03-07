@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" /><meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Upgrading Rational Focal Point" />
+<meta name="abstract" content="By using IBM Installation Manager, you can upgrade to the latest release of IBM Rational Focal Point." />
+<meta name="Description" content="By using IBM Installation Manager, you can upgrade to the latest release of IBM Rational Focal Point." />
+<meta name="DC.subject" content="upgrades, latest release, installation, upgrading" />
+<meta name="keywords" content="upgrades, latest release, installation, upgrading" />
+<meta name="DC.Relation" scheme="URI" content="../topics/c_upgrade_earlier_version.html" />
+<meta name="copyright" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Date" scheme="iso8601" content="2013-03-18" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="t_upgrading_new_release" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Generated date: Mon Mar 18 07:52:22 EDT 2013-->
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="Start" href="../topics/c_upgrade_earlier_version.html" />
+<title>Upgrading Rational Focal Point</title>
+
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/collapse.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/popup.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/resizer.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/thumbnail.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/tutorials.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.ccl.feedreader/scripts/readFeed.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"><!-- // leave this comment here --></script>
+
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/help.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/tutorials.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/samples.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.ccl.feedreader/css/feeds.css" />
+<noscript>
+<style type="text/css"><!--
+div.collapsecontent{display:block;}
+//--></style>
+</noscript></head>
+<body onload="javascript:resizeAtPageLoad();" onresize="javascript:resizeAllImages();" id="t_upgrading_new_release">
+<h1 class="title topictitle1">Upgrading <span class="keyword">Rational Focal Point</span></h1>
+<div class="body taskbody"><div>By using <span class="keyword">IBM® Installation Manager</span>,
+you can upgrade to the latest release of <span class="keyword">IBM Rational® Focal Point™</span>.</div><div class="section prereq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div><ul class="ul"><li class="li">Back up the database and any custom business rules. For more information,
+see <a class="xref" href="c_upgrade_earlier_version.html" title="Before you can upgrade to the latest release of IBM Rational Focal Point, you must create a backup of the database and some files.">Upgrading from earlier versions</a>.</li>
+<li class="li">Verify that your <a class="xref" href="r_license_requirements.html#r_license_requirements" title="The licenses for IBM Rational Focal Point version 6.5 and later are managed through the Rational Common Licensing process. To use Rational Focal Point, install IBM Rational License Key Server and the Rational Focal Point licenses, and then configure the Rational Focal Point server to point to the license server.">version
+of the license server</a> is supported for the release. If necessary,
+upgrade to the supported version of IBM Rational License Server.</li>
+<li class="li">Verify that your environment meets the <a class="xref" href="c_plan_req_hardsoft_product.html" title="Verify that your hardware and software meet or exceed the minimum requirements to install Rational Focal Point.">system requirements</a>.
+If you are using a version of software that is no longer supported,
+you must upgrade to a version that is compatible with <span class="keyword">Rational Focal Point</span>.
+For information about upgrading a software product, see the documentation
+for that product.</li>
+<li class="li">If you are using an IBM DB2® or Oracle database, make sure
+that you created the database tables with the specified table space
+names for <span class="keyword">Rational Focal Point</span>.</li>
+<li class="li">Obtain the installation media or download the installation package.
+You can install <span class="keyword">Rational Focal Point</span> from
+the installation media, or from a download package that is available
+on the IBM Passport Advantage® website or IBM Fix Central.</li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand"><span class="ph cmd">In <span class="keyword">IBM Installation Manager</span>,
+click <span class="ph menucascade"><span class="ph uicontrol">File </span> &gt; <span class="ph uicontrol">Preferences</span></span>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">On the Repositories page, click <span class="ph uicontrol">Add Repository</span> and
+specify the repository location as <kbd class="ph userinput"><span class="keyword">Rational Focal Point</span> <var class="keyword varname">package
+location</var>/disk1</kbd>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Click <span class="ph uicontrol">OK</span>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Click <span class="ph uicontrol">Update</span> and select <span class="ph uicontrol"><span class="keyword">Rational Focal Point</span></span>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">If an older version of <span class="keyword">IBM Installation Manager</span> is
+installed, proceed with the update of <span class="keyword">IBM Installation Manager</span> and
+then update <span class="keyword">Rational Focal Point</span>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Read the license agreement. If you agree with its terms,
+accept the license agreement and click <span class="ph uicontrol">Next</span>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">On the Features page, click <span class="ph uicontrol">Next</span>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">On the <span class="keyword wintitle">IBM Rational Focal Point Application Server</span> page,
+select the application server.</span> <ul class="ul"><li class="li">If you select Apache Tomcat application server, specify the application
+server details.<ol class="ol" type="a"><li class="li">Select the application server and click <span class="ph uicontrol">Browse Server
+Home</span> to specify the location of the application server
+home path.<div class="note note"><span class="notetitle">Note:</span> While upgrading, if the application server version
+is no longer supported by <span class="keyword">Rational Focal Point</span>,
+point to the home path of the new supported version of the application
+server.</div>
+</li>
+<li class="li">Specify the memory usage limit for the application server.<div class="note important"><span class="importanttitle">Important:</span> Make sure that the required memory space is available
+on the computer. If memory space is insufficient, the application
+server might not work properly or start.</div>
+</li>
+<li class="li">Select the default locale for <span class="keyword">Rational Focal Point</span>.
+Continue to step 9.</li>
+</ol>
+</li>
+<li class="li">If you select <span class="keyword">IBM WebSphere® Application Server</span>,
+you must manually set up and start the server after the installation.
+Proceed to step 10.</li>
+</ul>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">On the <span class="keyword wintitle">Database Type Selection and Configuration</span> page,
+specify the database details. </span><ol type="a" class="ol substeps"><li class="li substep substepexpand"><span class="ph cmd">Select the application database.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Type the host name/IP address, port, and name of the
+database.</span> <div class="note note"><span class="notetitle">Note:</span> If you are using an Oracle database, specify
+the database SID instead of the database name.</div>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" rules="all" frame="border" border="1"><caption><span class="tablecap">Table 1. Parameter value examples</span></caption><thead class="thead" align="left"><tr class="row" valign="bottom"><th class="entry" valign="bottom" width="16.666666666666664%" id="d30441e338">Database</th>
+<th class="entry" valign="bottom" width="83.33333333333334%" id="d30441e340">Parameter value examples</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="16.666666666666664%" headers="d30441e338 ">DB2</td>
+<td class="entry" valign="top" width="83.33333333333334%" headers="d30441e340 "><ul class="ul"><li class="li"><span class="keyword parmname parmname">Database Server Host Name/IP</span>:<kbd class="ph userinput">127.0.0.1</kbd></li>
+<li class="li"><span class="keyword parmname parmname">Database Port</span>:<kbd class="ph userinput">50000</kbd></li>
+<li class="li"><span class="keyword parmname parmname">Database Name</span>: <kbd class="ph userinput">FOCALDB</kbd></li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="16.666666666666664%" headers="d30441e338 ">Oracle</td>
+<td class="entry" valign="top" width="83.33333333333334%" headers="d30441e340 "><ul class="ul"><li class="li"><span class="keyword parmname parmname">Database Server Host Name/IP</span>:<kbd class="ph userinput">127.0.0.1</kbd></li>
+<li class="li"><span class="keyword parmname parmname">Database Port</span>:<kbd class="ph userinput">1521</kbd></li>
+<li class="li"><span class="keyword parmname parmname">Database Name</span>: <kbd class="ph userinput">ORCL10g</kbd></li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="16.666666666666664%" headers="d30441e338 ">PostgreSQL</td>
+<td class="entry" valign="top" width="83.33333333333334%" headers="d30441e340 "><ul class="ul"><li class="li"><span class="keyword parmname parmname">Database Server Host Name/IP</span>:<kbd class="ph userinput">127.0.0.1</kbd></li>
+<li class="li"><span class="keyword parmname parmname">Database Port</span>:<kbd class="ph userinput">5432</kbd></li>
+<li class="li"><span class="keyword parmname parmname">Database Name</span>: <kbd class="ph userinput">focalpoint</kbd></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="li substep substepexpand"><span class="ph cmd">Type the user name and the password for the database.</span> <ul class="ul"><li class="li">For DB2 and PostgreSQL databases,
+the database connection parameters are the same settings that you
+specified when you installed the database.</li>
+<li class="li">For Oracle databases, specify the user name and the password that
+you created while creating the <span class="keyword">Rational Focal Point</span> schemas.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li class="li step stepexpand" id="t_upgrading_new_release__rfp_lic_apache"><span class="ph cmd">On the <span class="keyword wintitle">IBM Rational Focal
+Point License Information</span> page, specify the license information.</span><ul class="ul choices"><li class="li choice">Select <span class="ph uicontrol">I will supply license information later</span> to
+proceed with the installation. You must specify the license information
+when you log in to <span class="keyword">Rational Focal Point</span>.</li>
+<li class="li choice">To specify the license server, select <span class="ph uicontrol">A Rational
+License Server</span>. Type the location of the license server
+in the following format: <kbd class="ph userinput"><var class="keyword varname">port@host</var></kbd>.
+For example: <kbd class="ph userinput">27000@licenseserver</kbd>. For information
+about the port number that must be specified, see the <a class="xref" href="http://publib.boulder.ibm.com/infocenter/rational/v0r0m0/topic/com.ibm.rational.license.doc/topics/t_assign_port_numbers.html" target="_blank" title="(Opens in a new tab or window)">Rational License Key server documentation</a>.</li>
+<li class="li choice">If you have a license file, copy the file to a folder on your
+computer and type the path of the license file.</li>
+</ul>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">Click <span class="ph uicontrol">Next</span>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Click <span class="ph uicontrol">Update</span>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">A message confirms the completion of the process. </span><ul class="ul choices"><li class="li choice">To verify the installation, click <span class="ph uicontrol">View Log File</span>.
+The installation log file for the current session opens in a new window.
+To close the log file window and return to the Install wizard, click <span class="ph uicontrol">Close</span>.</li>
+<li class="li choice">To close the Install wizard without verifying the installation,
+click <span class="ph uicontrol">Finish</span>.</li>
+</ul>
+</li>
+</ol>
+<div class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div><ul class="ul"><li class="li">If you are using <span class="keyword">WebSphere Application Server</span>,
+you must manually set up and start the server. For more information,
+see <a class="xref" href="t_setup_install_was.html" title="You can set up IBM Rational Focal Point to work with IBM WebSphere Application Server.">Setting up WebSphere Application Server</a>.</li>
+<li class="li">After you upgrade to the latest release of <span class="keyword">Rational Focal Point</span>,
+migrate the required data. For more information, see <a class="xref" href="t_conf_rfp.html#t_conf_rfp" title="After you upgrade to the latest version, you can migrate the baselines and reports that you generated in earlier versions. To use your custom business rules, you must obtain the new compiled version from support and import that version.">Migrating data from earlier versions of Rational Focal Point</a></li>
+<li class="li">The database verifier feature is available from <span class="keyword">Rational Focal Point</span> version
+6.5.1 release. After you migrate the data, perform the database verifier
+operation for verifying the database after the upgrade. For more information,
+see <a class="xref" href="../../com.ibm.rational.fp.help.doc/topics/c_verify_database.html" title="After you upgrade Rational Focal Point, you can test the database by using the Verify Database option.">Verifying the database</a></li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+</div>
+</div><span class="runningfooter">
+<hr />
+<a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=rdf" target="_blank">Feedback</a> 
+</span>
+</body>
+</html>

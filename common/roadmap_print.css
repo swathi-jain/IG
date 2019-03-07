@@ -1,0 +1,113 @@
+﻿body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #333;
+	background: none;
+}
+
+p {
+	margin: 0 0 .5em 0;
+}
+
+a {
+	color: #7696BC;
+}
+
+a:link:after, a:visited:after {
+   content: " (" attr(href) ") ";
+   font-size: 90%;
+   }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #ff962c;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+#startOver {
+	display: none;
+}
+
+#results h2 {
+	color: #333;
+}
+
+#qa, #theForm {
+	display: none;
+}
+
+#results {
+	overflow: visible !important;
+	overflow-y: visible !important;
+	float: none !important;
+}
+
+.takeaway {
+	font-weight: bold;
+}
+
+.filepath {
+	font:.9em "Courier New", Monaco, Courier, monospace;
+}
+
+.variable {
+	font-style: italic;
+}
+
+div.bigStep,
+div.bigStep div,
+#results,
+#results .inlineOption,
+#results .blockOption {
+	display: none;
+}
+
+#results .seen,
+#results .blockOption.seen,
+#results div.whatYouNeed,
+#results div.ajax div {
+	display: block;
+}
+
+#results span.seen,
+#results .inlineOption.seen {
+	display: inline;
+}
+
+#results h3 {
+	font-size: 1.3em;
+	margin: 0.4em 0;
+}
+
+#results h3 a.backToTop {
+	display: none;
+}
+
+#results div.ajax {
+	margin: 0.5em 0 0 1em;
+	font-size: 90%;
+	border-left: 3px solid #DDD;
+	padding: 0.5em 0.75em;
+	width: 65%;
+	display: block;
+}
+
+/*For images in loaded topics: shrink to fit as window is resized */
+div.ajax img {
+	max-width: 100%;
+}
+
+.countNumber:after {
+	content: ". ";
+}

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" /><meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Setting up WebSphere Application Server" />
+<meta name="abstract" content="You can set up IBM Rational Focal Point to work with IBM WebSphere Application Server." />
+<meta name="Description" content="You can set up IBM Rational Focal Point to work with IBM WebSphere Application Server." />
+<meta name="DC.subject" content="servers, setup, WebSphere Application Server, WAR files, deploying" />
+<meta name="keywords" content="servers, setup, WebSphere Application Server, WAR files, deploying" />
+<meta name="DC.Relation" scheme="URI" content="../topics/c_post_install.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/t_install_rfp_on_was.html" />
+<meta name="copyright" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Date" scheme="iso8601" content="2013-03-18" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="t_setup_install_was" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Generated date: Mon Mar 18 07:52:20 EDT 2013-->
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="Start" href="../topics/c_post_install.html" />
+<title>Setting up WebSphere Application Server to use Rational Focal Point</title>
+
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/collapse.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/popup.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/resizer.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/thumbnail.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/tutorials.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.ccl.feedreader/scripts/readFeed.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"><!-- // leave this comment here --></script>
+
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/help.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/tutorials.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/samples.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.ccl.feedreader/css/feeds.css" />
+<noscript>
+<style type="text/css"><!--
+div.collapsecontent{display:block;}
+//--></style>
+</noscript></head>
+<body onload="javascript:resizeAtPageLoad();" onresize="javascript:resizeAllImages();" id="t_setup_install_was">
+<h1 class="title topictitle1">Setting up <span class="keyword">WebSphere Application Server</span></h1>
+<div class="body taskbody"><div>You can set up <span class="keyword">IBM® Rational® Focal Point™</span> to
+work with <span class="keyword">IBM WebSphere® Application Server</span>.</div><div class="section prereq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div><ul class="ul"><li class="li">Verify that a supported version of <span class="keyword">WebSphere Application Server</span> is
+installed.</li>
+<li class="li">Ensure that the database schema and the table spaces for <span class="keyword">Rational Focal Point</span> are
+created.</li>
+<li class="li">If you are using an Oracle database, copy the <span class="ph filepath">ojdbc6.jar </span> file
+that would be available in the Oracle install directory to the following
+folder: <span class="ph filepath">Websphere install directory/lib</span>. Ensure
+that you have deleted the old <span class="ph filepath">ojdbc*.jar </span> files
+from this location.</li>
+<li class="li">If you are upgrading <span class="keyword">Rational Focal Point</span>,
+clear the server cache.</li>
+<li class="li">Ensure that the required memory space is available on the computer.
+If memory space is insufficient, the application server cannot start.</li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand"><span class="ph cmd">On the WebSphere Integrated
+Solutions Console, update the JVM arguments, which can be set to control
+aspects of the server behavior.</span><ol type="a" class="ol substeps"><li class="li substep substepexpand"><span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">Servers</span> &gt; <span class="ph uicontrol">WebSphere Application Servers</span></span>.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Click <span class="ph uicontrol">server1</span>.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">Server Infrastructure </span> &gt; <span class="ph uicontrol">Java and Process Management</span> &gt; <span class="ph uicontrol">Process
+definition</span></span>.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Click <span class="ph uicontrol">Java Virtual Machine</span>.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">In the <span class="ph uicontrol">Initial Heap</span> and <span class="ph uicontrol">Maximum
+Heap Size</span> fields, specify the required values.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">In the <span class="ph uicontrol">Generic JVM argument</span> field,
+add the following Java™ arguments
+based on your platform:</span> <ul class="ul"><li class="li">On Windows -32 bit systems: <samp class="ph codeph">-Dclient.encoding.override=UTF-8
+-Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djava.library.path= <var class="keyword varname">Focal
+Point installation directory</var>/Focalpoint/artifacts/licenselib/windows/32
+-DJAZZ_HOME=file:///<var class="keyword varname">Focal Point installation directory in
+the encoded URL format</var>/Focalpoint/artifacts/wars/jazzwebui/conf/</samp> <samp class="ph codeph">-Dcom.ibm.team.repository.service.oauth.legacyModeFronting=true</samp> <samp class="ph codeph">-Dsun.rmi.dgc.server.gcInterval=3600000000
+-Dsun.rmi.dgc.client.gcInterval=3600000000</samp> </li>
+<li class="li">On Windows -64 bit systems: <samp class="ph codeph">-Dclient.encoding.override=UTF-8
+-Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djava.library.path= <var class="keyword varname">Focal
+Point installation directory</var>/Focalpoint/artifacts/licenselib/windows/64
+-DJAZZ_HOME=file:///<var class="keyword varname">Focal Point installation directory in
+the encoded URL format</var>/Focalpoint/artifacts/wars/jazzwebui/conf/</samp> <samp class="ph codeph">-Dcom.ibm.team.repository.service.oauth.legacyModeFronting=true</samp><samp class="ph codeph">-Dsun.rmi.dgc.server.gcInterval=3600000000
+-Dsun.rmi.dgc.client.gcInterval=3600000000</samp><div class="note note"><span class="notetitle">Example:</span> <samp class="ph codeph">-Dclient.encoding.override=UTF-8
+-Djava.awt.headless=true -Dfile.encoding=UTF-8 -DJAZZ_HOME=file:///C:/PROGRA~2/IBM/Rational/FOCALP~1/artifacts/wars/jazzwebui/conf
+-Dcom.ibm.team.repository.service.oauth.legacyModeFronting=true -Dsun.rmi.dgc.server.gcInterval=3600000000
+-Dsun.rmi.dgc.client.gcInterval=3600000000 -Djava.library.path=C:/PROGRA~2/IBM/Rational/FOCALP~1/artifacts/licenselib/windows/64</samp></div>
+<div class="note note"><span class="notetitle">Note:</span> <ul class="ul"><li class="li">On Windows platforms,
+when you deploy <span class="keyword">Rational Focal Point</span> on <span class="keyword">WebSphere Application Server</span> in
+the admin console, you must add License Library path to the Java Virtual
+Machine startup. If the path to <samp class="ph codeph"><var class="keyword varname">FP_HOME</var></samp> has
+spaces, specify the short form of the path name. For example, if the
+path is <span class="ph filepath">C:\Program Files</span>, type the path name
+as <span class="ph filepath">C:\Progra˜1</span></li>
+<li class="li">The license library path must point to the JRE that must be used.
+For example, if a 32-bit JRE is used on a 64-bit OS, the library path
+must be <samp class="ph codeph">-Djava.library.path= <var class="keyword varname">Focal Point installation
+directory</var>/Focalpoint/artifacts/licenselib/windows/32</samp>.</li>
+</ul>
+</div>
+</li>
+<li class="li">On Linux -32 bit systems:<samp class="ph codeph">-Dclient.encoding.override=UTF-8
+-Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djava.library.path= <var class="keyword varname">Focal
+Point installation directory</var>/Focalpoint/artifacts/licenselib/linux
+-DJAZZ_HOME=file:///<var class="keyword varname">Focal Point installation directory in
+the encoded URL format</var>/Focalpoint/artifacts/wars/jazzwebui/conf/</samp> <samp class="ph codeph">-Dcom.ibm.team.repository.service.oauth.legacyModeFronting=true</samp><samp class="ph codeph">-Dsun.rmi.dgc.server.gcInterval=3600000000
+-Dsun.rmi.dgc.client.gcInterval=3600000000</samp></li>
+<li class="li">On Linux -64 bit systems: <samp class="ph codeph">-Dclient.encoding.override=UTF-8
+-Djava.awt.headless=true -Dfile.encoding=UTF-8 -d64 -Djava.library.path=<var class="keyword varname">Focal
+Point installation directory</var>/Focalpoint/artifacts/licenselib/linux/64
+-DJAZZ_HOME=file:///<var class="keyword varname">Focal Point installation directory in
+the encoded URL format</var>/Focalpoint/artifacts/wars/jazzwebui/conf/</samp> <samp class="ph codeph">-Dcom.ibm.team.repository.service.oauth.legacyModeFronting=true</samp><samp class="ph codeph">-Dsun.rmi.dgc.server.gcInterval=3600000000
+-Dsun.rmi.dgc.client.gcInterval=3600000000</samp></li>
+<li class="li">On Solaris -32 bit systems: <samp class="ph codeph">-Dclient.encoding.override=UTF-8
+-Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djava.library.path=<var class="keyword varname">Focal
+Point installation directory</var>/Focalpoint/artifacts/licenselib/solaris
+-DJAZZ_HOME=file:///<var class="keyword varname">Focal Point installation directory in
+the encoded URL format</var>/Focalpoint/artifacts/wars/jazzwebui/conf/</samp> <samp class="ph codeph">-Dcom.ibm.team.repository.service.oauth.legacyModeFronting=true</samp><samp class="ph codeph">-Dsun.rmi.dgc.server.gcInterval=3600000000
+-Dsun.rmi.dgc.client.gcInterval=3600000000</samp></li>
+<li class="li">On Solaris -64 bit systems: <samp class="ph codeph">-Dclient.encoding.override=UTF-8
+-Djava.awt.headless=true -Dfile.encoding=UTF-8 -d64 -Djava.library.path=<var class="keyword varname">Focal
+Point installation directory</var>/Focalpoint/artifacts/licenselib/solaris/64
+-DJAZZ_HOME=file:///<var class="keyword varname">Focal Point installation directory in
+the encoded URL format</var>/Focalpoint/artifacts/wars/jazzwebui/conf/</samp> <samp class="ph codeph">-Dcom.ibm.team.repository.service.oauth.legacyModeFronting=true</samp><samp class="ph codeph">-Dsun.rmi.dgc.server.gcInterval=3600000000
+-Dsun.rmi.dgc.client.gcInterval=3600000000</samp></li>
+</ul>
+</li>
+<li class="li substep substepexpand">Optional: <span class="ph cmd">If you set your <span class="keyword">Rational Focal Point</span> installation
+for a single locale, add <samp class="ph codeph">-Duser.language=<var class="keyword varname">locale code</var></samp> to
+address case-sensitive sorting based on the locale.</span> For
+example: <samp class="ph codeph">-Duser.language=<var class="keyword varname">en</var></samp></li>
+<li class="li substep substepexpand"><span class="ph cmd">Click <span class="ph uicontrol">Apply</span>, and then click <span class="ph uicontrol">OK</span>.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">If you are using an IBM DB2® or Oracle database, specify
+the table space details that you created for <span class="keyword">Rational Focal Point</span>.
+Click <span class="ph uicontrol">Custom Properties</span> and add the table space
+details.</span> <div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" rules="all" frame="border" border="1"><caption><span class="tablecap">Table 1. Table space details</span></caption><thead class="thead" align="left"><tr class="row" valign="bottom"><th class="entry" valign="bottom" width="19.696969696969695%" id="d22735e376">Database</th>
+<th class="entry" valign="bottom" width="80.3030303030303%" id="d22735e378">Details</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="19.696969696969695%" headers="d22735e376 ">DB2</td>
+<td class="entry" valign="top" width="80.3030303030303%" headers="d22735e378 "><strong class="ph b">Object storage:</strong><ul class="ul"><li class="li">Name: <kbd class="ph userinput">focalpoint/bigObjStorage</kbd></li>
+<li class="li">Value: <kbd class="ph userinput">IN FP_BIGOBJ</kbd></li>
+</ul>
+<strong class="ph b">Data storage:</strong><ul class="ul"><li class="li">Name: <kbd class="ph userinput">focalpoint/dataStorage</kbd></li>
+<li class="li">Value: <kbd class="ph userinput">IN FP_DATA</kbd></li>
+</ul>
+<strong class="ph b">Index storage:</strong><ul class="ul"><li class="li">Name: <kbd class="ph userinput">focalpoint/indexStorage</kbd></li>
+<li class="li">Value: <kbd class="ph userinput">IN FP_INDEX</kbd></li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="19.696969696969695%" headers="d22735e376 ">Oracle</td>
+<td class="entry" valign="top" width="80.3030303030303%" headers="d22735e378 "><strong class="ph b">Object storage:</strong><ul class="ul"><li class="li">Name: <kbd class="ph userinput">focalpoint/bigObjStorage</kbd></li>
+<li class="li">Value: <kbd class="ph userinput">TABLESPACE FP_BIGOBJ STORAGE (initial 1m next
+1m pctincrease 0)</kbd></li>
+</ul>
+<strong class="ph b">Data storage:</strong><ul class="ul"><li class="li">Name: <kbd class="ph userinput">focalpoint/dataStorage</kbd></li>
+<li class="li">Value: <kbd class="ph userinput">TABLESPACE FP_DATA STORAGE (initial 1m next
+1m pctincrease 0)</kbd></li>
+</ul>
+<strong class="ph b">Index storage:</strong><ul class="ul"><li class="li">Name: <kbd class="ph userinput">focalpoint/indexStorage</kbd></li>
+<li class="li">Value: <kbd class="ph userinput">TABLESPACE FP_INDEX STORAGE (initial 1m next
+1m pctincrease 0)</kbd></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="li substep substepexpand" id="t_setup_install_was__rfp_lic_was"><span class="ph cmd">To specify the location of the <span class="keyword">Rational Focal Point</span> license
+file, on the Custom Properties page, add the following details:</span> <ul class="ul"><li class="li">Name: <kbd class="ph userinput">focalpoint/licenseLocation</kbd></li>
+<li class="li">Value: Type the location of the license server in the format <samp class="ph codeph"><var class="keyword varname">port@host</var></samp>.
+For example: <kbd class="ph userinput">27000@licenseserver</kbd>.</li>
+</ul>
+</li>
+<li class="li substep substepexpand"><span class="ph cmd">To enable a non-IBM JAX-WS web services engine in <span class="keyword">WebSphere Application Server</span>,
+add the following details on the Custom Properties page:</span> <ul class="ul"><li class="li">Name: <kbd class="ph userinput">com.ibm.websphere.webservices.DisableIBMJAXWSEngine</kbd></li>
+<li class="li">Value: true</li>
+</ul>
+</li>
+<li class="li substep substepexpand"><span class="ph cmd">To enable <span class="keyword">Rational Publishing Engine</span> for
+report generation, add the following details on the Custom Properties
+page:</span> <ul class="ul"><li class="li">Name: <kbd class="ph userinput">org.eclipse.emf.common.util.URI.archiveSchemes</kbd></li>
+<li class="li">Value: <kbd class="ph userinput">wsjar wszip jar zip</kbd></li>
+</ul>
+</li>
+<li class="li substep substepexpand"><span class="ph cmd">To enable the required locales environment to <span class="keyword">Rational Focal Point</span> users,
+specify the required locale code separated by vertical bars (<samp class="ph codeph">|</samp>).
+On the Custom Properties page, add the locale details:</span> <ul class="ul"><li class="li">For <kbd class="ph userinput">focalpoint/installSelectedLocales</kbd>,
+the values are as follows: <samp class="ph codeph">en|de|es|fr|it|pt,BR|ja|ko|zh,CN|zh,TW|ar|he|cs|hu|pl|ru</samp></li>
+<li class="li">For <kbd class="ph userinput">focalpoint/defaultLocale</kbd>, only one
+value can be specified from the following values:<samp class="ph codeph">en|de|es|fr|it|pt,BR|ja|ko|zh,CN|zh,TW|ar|he|cs|hu|pl|ru</samp></li>
+</ul>
+</li>
+<li class="li substep substepexpand"><span class="ph cmd">Add the property values for <kbd class="ph userinput">focalpoint/fontFile</kbd>, <kbd class="ph userinput">focalpoint/hostName</kbd>,
+and <kbd class="ph userinput">focalpoint/defaultLocale</kbd>.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Click <span class="ph uicontrol">Apply</span>, and then click <span class="ph uicontrol">OK</span>.</span></li>
+</ol>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">Specify the class path of the <span class="keyword">Rational Focal Point</span> library
+files.</span><ol type="a" class="ol substeps"><li class="li substep"><span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">Environment</span> &gt; <span class="ph uicontrol">Shared Libraries</span></span>.</span></li>
+<li class="li substep"><span class="ph cmd">Specify the required scope for the library.</span></li>
+<li class="li substep"><span class="ph cmd">Click <span class="ph uicontrol">New</span>.</span></li>
+<li class="li substep"><span class="ph cmd">Specify a name for the library. For example: <kbd class="ph userinput">fpjars</kbd></span></li>
+<li class="li substep"><span class="ph cmd">Specify the class path of the <span class="keyword">Rational Focal Point</span> library
+files. These files are in the installation location of <span class="keyword">Rational Focal Point</span>: <span class="ph filepath"><var class="keyword varname">Focal
+Point installation directory</var>\Focal Point\artifacts\jars</span>.</span></li>
+<li class="li substep"><span class="ph cmd">Click <span class="ph uicontrol">Apply</span>, and then click <span class="ph uicontrol">OK</span>.</span></li>
+</ol>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">Configure the resource environment to specify the file
+storage.</span><ol type="a" class="ol substeps"><li class="li substep substepexpand"><span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">Resources</span> &gt; <span class="ph uicontrol">Resource Environment</span> &gt; <span class="ph uicontrol">Resource Environment
+Providers</span></span>.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Specify the required scope for the library.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Click <span class="ph uicontrol">New</span>.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">For the name of the data storage, type <kbd class="ph userinput">filestorageProvider</kbd>.
+Enter the description for the data storage and click <span class="ph uicontrol">OK</span>.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Select <span class="ph uicontrol">filestorageProvider</span> and
+provide the reference details by clicking <span class="ph uicontrol">Referenceables</span>.</span> <ol class="ol" type="i"><li class="li">Click <span class="ph uicontrol">New</span>.</li>
+<li class="li">In the <span class="ph uicontrol">Factory class name</span> field, type <kbd class="ph userinput">com.telelogic.focalpoint.tools.filestorage.FileStorageFactory</kbd>.</li>
+<li class="li">In the <span class="ph uicontrol">Class name</span> field, type <kbd class="ph userinput">com.telelogic.focalpoint.tools.filestorage.FileStorage</kbd></li>
+<li class="li">Click <span class="ph uicontrol">OK</span>.</li>
+</ol>
+</li>
+<li class="li substep substepexpand"><span class="ph cmd">Create the environment entries.</span> <ol class="ol" type="i"><li class="li">Click <span class="ph uicontrol">Resource environment entries</span>.</li>
+<li class="li">Specify the required scope for the library.</li>
+<li class="li">Click <span class="ph uicontrol">New</span>.</li>
+<li class="li">In the <span class="ph uicontrol">Name</span> field, type <kbd class="ph userinput">filestorage</kbd>.</li>
+<li class="li">In the <span class="ph uicontrol">JNDI name</span> field, type <kbd class="ph userinput">focalpoint/filestorage</kbd>.</li>
+<li class="li">Click <span class="ph uicontrol">OK</span>.</li>
+</ol>
+</li>
+<li class="li substep substepexpand"><span class="ph cmd">Select <span class="ph uicontrol">filestorage</span> and specify
+the file storage database details. Click <span class="ph uicontrol">Custom Properties</span>.</span> <ol class="ol" type="i"><li class="li">Click <span class="ph uicontrol">New</span>.</li>
+<li class="li">In the <span class="ph uicontrol">Name</span> field, type <kbd class="ph userinput">storageClassName</kbd>.</li>
+<li class="li">In the <span class="ph uicontrol">Value</span> field, type <kbd class="ph userinput">com.telelogic.focalpoint.tools.filestorage.FileStorageDB</kbd>. </li>
+<li class="li">Ensure that the type is <kbd class="ph userinput">java.lang.String</kbd></li>
+<li class="li">Click <span class="ph uicontrol">OK</span>.</li>
+</ol>
+</li>
+<li class="li substep substepexpand"><span class="ph cmd">Specify the base path information of the file storage.
+Click <span class="ph uicontrol">New</span>.</span> <ol class="ol" type="i"><li class="li">In the <span class="ph uicontrol">Name</span> field, type <kbd class="ph userinput">basePath</kbd>.</li>
+<li class="li">For the database file storage, do not specify a value.</li>
+<li class="li">Click <span class="ph uicontrol">OK</span>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">Configure the JDBC provider to point to the JAR files of
+the database.</span> For information about configuring the JDBC
+provider, see the <span class="keyword">WebSphere Application Server</span> documentation.<div class="p">While
+you configure the data source, use the following parameters:<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" rules="all" frame="border" border="1"><caption><span class="tablecap">Table 2. Data source details</span></caption><thead class="thead" align="left"><tr class="row" valign="bottom"><th class="entry" valign="bottom" width="11.398963730569948%" id="d22735e826">Database</th>
+<th class="entry" valign="bottom" width="88.60103626943005%" id="d22735e828">Parameters</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="11.398963730569948%" headers="d22735e826 ">PostgreSQL</td>
+<td class="entry" valign="top" width="88.60103626943005%" headers="d22735e828 "><ul class="ul"><li class="li"><span class="ph uicontrol">Database Type</span>: <kbd class="ph userinput">User Defined</kbd></li>
+<li class="li"><span class="ph uicontrol">Implementation class name</span>: <kbd class="ph userinput">org.postgresql.jdbc2.optional.ConnectionPool</kbd></li>
+<li class="li"><span class="ph uicontrol">Class path</span>: <span class="ph filepath"><var class="keyword varname">Focal Point
+installation directory</var>\Focal Point\artifacts\fpjars\postgresql-8.1-405.jdbc3.jar</span></li>
+<li class="li"><span class="ph uicontrol">JNDI name</span>: <kbd class="ph userinput">jdbc/focalpoint</kbd></li>
+<li class="li">For Connection Pool Properties, set the websphereDefaultIsolationLevel
+as <kbd class="ph userinput">2</kbd></li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="11.398963730569948%" headers="d22735e826 ">Oracle</td>
+<td class="entry" valign="top" width="88.60103626943005%" headers="d22735e828 "><ul class="ul"><li class="li"><span class="ph uicontrol">Database Type</span>: <kbd class="ph userinput">Oracle</kbd></li>
+<li class="li"><span class="ph uicontrol">Class path</span>: Location of <span class="ph filepath">ojdbc*.jar</span> that
+is copied to the following location: <span class="ph filepath">Websphere install directory/lib</span></li>
+<li class="li"><span class="ph uicontrol">JNDI name</span>: <kbd class="ph userinput">jdbc/focalpoint</kbd></li>
+<li class="li">Select data store helper class as <span class="ph uicontrol">Oracle11g data store
+helper</span></li>
+<li class="li">For Connection Pool Properties, add a custom property named <kbd class="ph userinput">SetBigStringTryClob</kbd> and
+set the value as <kbd class="ph userinput">true</kbd>. Set the websphereDefaultIsolationLevel
+as <kbd class="ph userinput">2</kbd>.</li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="11.398963730569948%" headers="d22735e826 ">IBM DB2</td>
+<td class="entry" valign="top" width="88.60103626943005%" headers="d22735e828 "><ul class="ul"><li class="li"><span class="ph uicontrol">Database Type</span>: <kbd class="ph userinput">IBM DB2</kbd></li>
+<li class="li"><span class="ph uicontrol">Class path</span>: Location of <span class="ph filepath">db2jcc-9.5.jar</span> and <span class="ph filepath">db2jcc_license_cu-9.5.jar</span></li>
+<li class="li"><span class="ph uicontrol">JNDI name</span>: <kbd class="ph userinput">jdbc/focalpoint</kbd></li>
+<li class="li">For Connection Pool Properties, set the websphereDefaultIsolationLevel
+as <kbd class="ph userinput">2</kbd></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+</ol>
+<div class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>Install the <span class="keyword">Rational Focal Point</span> application
+on <span class="keyword">WebSphere Application Server</span>.
+For details, see <a class="xref" href="t_install_rfp_on_was.html" title="After you set up IBM WebSphere Application Server, you must deploy the IBM Rational Focal Point application, the financial capability feature, the Jazz feature, and the help system. Then, you can start the applications.">Deploying Rational Focal Point on WebSphere Application Server</a>.</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+</div>
+<div class="relinfo reltasks"><strong>Related tasks</strong>:<br />
+<div><a class="link" href="../topics/t_install_rfp_on_was.html" title="After you set up IBM WebSphere Application Server, you must deploy the IBM Rational Focal Point application, the financial capability feature, the Jazz feature, and the help system. Then, you can start the applications.">Deploying Rational Focal Point on WebSphere Application Server</a></div>
+</div>
+</div><span class="runningfooter">
+<hr />
+<a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=rdf" target="_blank">Feedback</a> 
+</span>
+</body>
+</html>

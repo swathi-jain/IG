@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="">
+<head>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=utf-8">
+<title>Guide to upgrade Rational Focal Point</title>
+<link media="screen, projection" type="text/css" href="dijit/themes/tundra/tundra.css" rel="stylesheet">
+<link media="print" type="text/css" href="../common/roadmap_print.css" rel="stylesheet">
+<link media="screen, projection" type="text/css" href="../common/roadmap.css" rel="stylesheet">
+
+<!--
+Translators! Translate the string variables below, to the right of the '=' sign and between the apostrophes
+DO NOT CHANGE THE 'djConfig' lines!
+ -->
+<script type="text/javascript">
+var errorMsg = 'Please select an option', //Text seen when the user fails to select a required option
+	printAllLabel = 'Load and print all topics', //DEPRECATED. Button text for loading the content of all topics
+	backToFormLabel = 'Start over?', //Button text to start all over.
+	backToFormTitle = 'Go back and change your selections', //Help for text on hovering over the Start Over button
+	loadErrorText = 'This file failed to load. Sorry about that. Click here to go directly to it.', //Error text shown when a topic fails to load for any reason
+	tocTitle = 'Contents', //Header for the Table of Contents section
+	backToTopString = 'Back to top', //Text for returning to the table of contents from each step.
+	loadingString = 'Loading', //Text shown while waiting for all topics to finish loading
+	loadedLinkText = 'The complete content of this topic has been loaded into this document and appears immediately below'; //Text shown when a topic has been loaded
+
+
+//Required for Dojo toolkit to work
+var djConfig = {
+	parseOnLoad:true,
+	isDebug: false
+};
+</script>
+
+</head>
+<body class="tundra">
+<h1 id="pagetitle">Create a custom guide for installing and upgrading IBM Rational Focal Point </h1>
+<p id="shortDesc">Follow the instructions in this guide to install or upgrade IBM&reg; Rational&reg; Focal Point&trade;</p>
+<div id="qa">
+<!--	<div class="note">
+		<p><b>Whoa there, buckaroo!</b>: This guide describes installing and upgrading Rational Focal Point.</p>
+	</div> -->
+	<h2>Select the options that best describe your installation environment</h2>
+	<form id="theForm" action="#">
+
+
+		<div id="form_upgrade" class="needsSelected">
+					<fieldset>
+						<legend>Select your current version of Rational Focal Point:</legend>
+
+						<ul>
+							<li><input type="radio" name="upgrade" value="fivefour" id="upgrade_fivefour"><label for="upgrade_fivefour">A release of version 5.4</label></li>
+							<li><input type="radio" name="upgrade" value="sixzero" id="upgrade_sixzero"><label for="upgrade_sixzero">A release of versions 6.0 - 6.4</label></li>
+							<li><input type="radio" name="upgrade" value="sixfourone" id="upgrade_sixfourone"><label for="upgrade_sixfourone">A release of version 6.4.1</label></li>
+							<li><input type="radio" name="upgrade" value="sixfive" id="upgrade_sixfive"><label for="upgrade_sixfive">A release of version 6.5</label></li>
+							<li><input type="radio" name="upgrade" value="new" id="upgrade_new"><label for="upgrade_new">I am installing Rational Focal Point for the first time</label></li>
+						</ul>
+					</fieldset>
+		</div>
+
+		<div id="form_appserver" class="needsSelected">
+			<fieldset>
+				<legend>Select your application server:</legend>
+				<ul>
+					<li><input type="radio" name="appserver" value="tomcat" id="server_tomcat"><label for="server_tomcat">Apache Tomcat</label></li>
+					<li><input type="radio" name="appserver" value="was" id="server_was"><label for="server_was">IBM WebSphere&reg; Application Server</label></li>
+				</ul>
+			</fieldset>
+		</div>
+
+		<div id="form_dbserver" class="needsSelected">
+			<fieldset>
+				<legend>Select your database server:</legend>
+
+				<ul>
+					<li><input type="radio" name="dbserver" value="db2" id="dbserver_db2"><label for="dbserver_db2">DB2<span title="DB2 is a registered trademark of IBM">&reg;</span></label></li>
+					<li><input type="radio" name="dbserver" value="oracle" id="dbserver_oracle"><label for="dbserver_oracle">Oracle</label></li>
+					<li><input type="radio" name="dbserver" value="postgre" id="dbserver_postgre"><label for="dbserver_postgre">PostgreSQL</label></li>
+				</ul>
+			</fieldset>
+		</div>
+
+		<div id="form_buttons">
+			<button dojotype="dijit.form.Button" type="submit" id="form_submit">Get your complete instructions</button>
+			<button type="reset" id="form_reset" title="Clear all of your selections">Reset</button>
+		</div>
+	</form>
+</div>
+
+<!-- Here's where all of your actual content goes. It will be hidden by CSS at first, then revealed (by Javascript/CSS) after the user fills out the form -->
+
+<div id="results">
+
+	<!-- HEY! Don't forget to change your product name!! -->
+	<h2>To install or upgrade Rational Focal Point:</h2>
+
+	<!-- Get used to this class="bigStep" attribute. You'll use it to indicate that the content of this DIV is what you consider to be a MAJOR task, such as retrieving install materials, or deploying an application -->
+
+	<div class="bigStep forupgradefivefour" id="upgrade2"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.js javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+						<h3>Create a backup of the database and files.</h3>
+					<div class="whatYouNeed">
+											<p>Before you begin:</p>
+															<ul>
+																<li>You need information about creating the backup, which is in the documentation of your current version of Rational Focal Point and your database.</li>
+																<li>You need Rational Focal Point version 6.4.0, which you can obtain from IBM Rational Support.</li><!-- LJW: Provide a link to where users can obtain the product -->
+																<li>On Linux systems, the Apache Tomcat application server is uninstalled when you uninstall a release of Rational Focal Point 5.4. Before you install version 6.4.0, you must install the application server. </li>
+																<li>You need the product documentation of Rational Focal Point 6.4.0, which contains more information about installing and uninstalling Rational Focal Point.</li>
+									</ul>
+							</div>
+							<p> Create a backup of the database, report images, and custom business rules, and then uninstall Rational Focal Point. </p>
+							<p> Install Rational Focal Point version 6.4.0, update the database, and then upgrade to the latest version. For more information, see <a href="t_upgrade_from_54.html">Upgrading from Rational Focal Point version 5.4 releases</a>.</p>
+	</div>
+
+	<div class="bigStep forupgradesixzero" id="upgrade1"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.src javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+			<h3>Create a backup of the database and the custom business rules. </h3> <!-- See this H3 immediately following a DIV.bigStep? This will become the title of your major task. The javascript will automatically add step numbers for you, so don't worry about that. -->
+			<div class="whatYouNeed">
+						<p>Before you begin: </p>
+						<ul>
+						<li>You need information about creating the backup, which is in the documentation for your current version of Rational Focal Point and the database.
+						</li>
+						</ul>
+		</div>
+						<p> Create a backup of the database and custom business rules, and then uninstall Rational Focal Point. For more information, see <a href="t_migrate_fp.html">Ugrading from earlier versions of Rational Focal Point</a>.</p>
+
+	</div>
+
+
+	<div class="bigStep forupgradesixfourone" id="upgrade3"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.js javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+				<h3>Create a backup of the database and the custom business rules. </h3> <!-- See this H3 immediately following a DIV.bigStep? This will become the title of your major task. The javascript will automatically add step numbers for you, so don't worry about that. -->
+				<p>For more information, see <a href="t_upgrading_from_641.html">Upgrading from a release of version 6.4.1</a>.</p>
+	</div>
+
+
+	<div class="bigStep forupgradesixfive" id="upgrade4"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.js javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+						<h3>Create a backup of the database and the custom business rules. </h3> <!-- See this H3 immediately following a DIV.bigStep? This will become the title of your major task. The javascript will automatically add step numbers for you, so don't worry about that. -->
+						<p> For more information, see <a href="t_upgrade_rfp_65.html">Upgrading from a release of version 6.5 to the new release.</a>.</p>
+	</div>
+
+	<div class="bigStep" id="SystemRequirements"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.js javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+			<h3>Verify that the supported versions of the operating system, database, application server, browser, and JREs are installed.
+ </h3> <!-- See this H3 immediately following a DIV.bigStep? This will become the title of your major task. The javascript will automatically add step numbers for you, so don't worry about that. -->
+
+			<div class="forupgradefivefour forupgradesixzero forupgradesixfourone forupgradesixfive">
+			<p>If you are upgrading from an earlier version of Rational Focal Point and your instance of one of the software requirements is no longer supported by Rational Focal Point, you must upgrade to a version that is compatible with Rational Focal Point. For information about upgrading the software, see the documentation for that product.</p>
+			</div>
+			<div class="forupgradesixfourone">
+			<p><strong>Restriction:</strong>IBM WebSphere Application Server Community Edition is not supported by releases of Rational Focal Point version 6.5. You must use Apache Tomcat application server or WebSphere Application Server.</p>
+			</div>
+			<p>For more information, see <a href="c_plan_req_hardsoft_product.html">System requirements</a>.</p>
+			<p>Related links:
+			<ul>
+			<li><a href="http://www.microsoft.com/download/default.aspx" rel="external">Microsoft Download Center</a></li>
+			<li><a href="http://www.redhat.com/rhel/server/">Red Hat Enterprise Linux for Servers</a></li>
+			<li><a href="http://www.oracle.com/technetwork/server-storage/solaris/downloads/index.html">Oracle Solaris downloads</a></li>
+			<li><a href="http://www.ibm.com/software/webservers/appserv/was/">IBM Websphere Application Server downloads</a></li>
+			<li><a href="http://tomcat.apache.org/">Apache Tomcat downloads</a></li>
+			<li><a href="http://www.ibm.com/software/data/db2/">IBM DB2 database software downloads</a></li>
+			<li><a href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html">Oracle database software downloads</a></li>
+			<li><a href="http://www.postgresql.org/download/">PostgreSQL database downloads</a></li>
+			<li><a href="http://www.ibm.com/developerworks/java/jdk/">IBM Java 2 SE downloads</a></li>
+			<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Oracle Java SE downloads</a></li>
+			<li><a href="http://www.mozilla.com/firefox/">Mozilla Firefox downloads</a></li>
+			<li><a href="http://www.ibm.com/software/rational/support/licensing/">Rational Licensing Support</a></li>
+</ul>
+</p>
+	</div>
+
+
+	<div class="bigStep" id="getInstallMedia">
+			<h3>Obtain and extract the Rational Focal Point installation media.</h3>
+			<p>Obtain the installation media from IBM Software Support or download the package from IBM Passport Advantage or FixCentral.</p>
+			<p>Related links:
+			<ul>
+			<li><a href="http://www.ibm.com/software/lotus/passportadvantage/pao_customer.html" rel="external">IBM Passport Advantage</a></li>
+			<li><a href="http://www.ibm.com/support/fixcentral/" rel="external">IBM Fix Central</a></li>
+			<li><a href="http://www.ibm.com/software/rational/support/" rel="external">IBM Rational Support</a></li>
+			</ul>
+	</div>
+
+<div class="bigStep" id="installLicenseServer">
+		<h3>Install Rational Common License Key Server and the license keys.</h3>
+		<div class="whatYouNeed">
+			<p>Before you begin:</p>
+				<ul>
+					<li>You need a server on which to install Rational License Server.</li>
+					<li>You need licenses for Rational Focal Point. To get the license keys, see <a rel="external" href="http://www.ibm.com/software/rational/support/licensing/">the Rational Support page for licensing</a>.</li>
+				</ul>
+		</div>
+		<p>Verify that the version of the license server is supported for the release, and install the license server. For information, see <a href="r_license_requirements.html">License requirements</a></p>
+		<div class="forupgradesixfive">
+		<p>If you have the compatible version of the license server and the licenses are already installed, ignore this task.
+		</p>
+		</div>
+		<p>Install the Rational Focal Point licenses. For more information, see <a href="t_install_rfp_license.html">Install the Rational Focal Point licenses.</a></p>
+	</div>
+
+<div class="bigStep forPostgre"  id="dbsetup1"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.js javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+			<h3>Configure the PostgreSQL database.
+ </h3> <!-- See this H3 immediately following a DIV.bigStep? This will become the title of your major task. The javascript will automatically add step numbers for you, so don't worry about that. -->
+
+			<div class="forupgradefivefour forupgradesixzero forupgradesixfourone forupgradesixfive">
+			<p>If your database version is not supported, upgrade to a version that is compatible with Rational Focal Point. For information about upgrading the software, see the documentation for that product. If the database is configured to work with Rational Focal Point, ignore this task.</p>
+			</div>
+			<p>For more information, see <a href="t_window_config_postgresql_database.html">Configuring a PostgreSQL database</a>.</p>
+
+	</div>
+
+	<div class="bigStep forDB2"  id="dbsetup2"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.js javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+				<h3>Configure the IBM DB2 database.
+	 </h3> <!-- See this H3 immediately following a DIV.bigStep? This will become the title of your major task. The javascript will automatically add step numbers for you, so don't worry about that. -->
+
+				<div class="forupgradesixfourone forupgradesixfive">
+							<p>If your database version is not supported, upgrade to a version that is compatible with Rational Focal Point. For information about upgrading the software, see the documentation for that product. If the database is configured to work with Rational Focal Point, ignore this task.</p>
+			</div>
+				<p>For more information, see <a href="t_win_configuring_db2.html">Configuring a DB2 database</a>.</p>
+
+		</div>
+
+<div class="bigStep forOracle"  id="dbsetup3"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.js javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+				<h3>Configure the Oracle database.
+	 </h3> <!-- See this H3 immediately following a DIV.bigStep? This will become the title of your major task. The javascript will automatically add step numbers for you, so don't worry about that. -->
+
+				<div class="forupgradefivefour forupgradesixzero forupgradesixfourone forupgradesixfive">
+							<p>If your database version is not supported, upgrade to a version that is compatible with Rational Focal Point. For information about upgrading the software, see the documentation for that product. If the database is configured to work with Rational Focal Point, ignore this task.</p>
+			</div>
+				<p>For more information, see <a href="t_win_configuring_oracle.html">Configuring an Oracle database</a>.</p>
+
+		</div>
+		<div class="bigStep forupgradefivefour forupgradesixzero forupgradesixfourone forupgradenew"  id="install"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.js javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+						<h3>Install Rational Focal Point.
+			 </h3> <!-- See this H3 immediately following a DIV.bigStep? This will become the title of your major task. The javascript will automatically add step numbers for you, so don't worry about that. -->
+
+						<p>For more information, see <a href="t_install_rfp.html">Install Rational Focal Point</a>.</p>
+
+		</div>
+
+<div class="bigStep forupgradesixfive"  id="upgrade5"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.js javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+						<h3>Upgrade Rational Focal Point.
+			 </h3> <!-- See this H3 immediately following a DIV.bigStep? This will become the title of your major task. The javascript will automatically add step numbers for you, so don't worry about that. -->
+
+						<p>For more information, see <a href="t_upgrading_new_release.html">Upgrade Rational Focal Point</a>.</p>
+
+		</div>
+		<div class="bigStep forTomcat"  id="startTomcat"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.js javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+								<h3>Start Apache Tomcat server.
+					 </h3> <!-- See this H3 immediately following a DIV.bigStep? This will become the title of your major task. The javascript will automatically add step numbers for you, so don't worry about that. -->
+
+								<p>For more information, see <a href="t_start_apps_apache.html">Start the Apache Tomcat server </a>.</p>
+
+		</div>
+		<div class="bigStep forWAS"  id="startWAS"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.js javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+										<h3>Configure and deploy the Rational Focal Point components on Websphere Application Server.
+							 </h3> <!-- See this H3 immediately following a DIV.bigStep? This will become the title of your major task. The javascript will automatically add step numbers for you, so don't worry about that. -->
+
+										<p>To set up Websphere Application Server, see <a href="t_setup_install_was.html">Setting up Websphere Application Server </a>.</p>
+										<p>To deploy the Rational Focal Point application component on Websphere Application Server, see <a href="t_install_rfpapp_was.html">Deploying the Rational Focal Point application </a>.</p>
+										<p>To deploy the Financial feature component on Websphere Application Server, see <a href="t_install_financail_was.html">Deploying the financial feature component </a>.</p>
+										<p>To deploy the Jazz Web UI feature component on Websphere Application Server, see <a href="t_install_jazz_was.html">Deploying the Jazz Web UI feature component </a>.</p>
+										<p>To deploy the help system on Websphere Application Server, see <a href="t_install_help_was.html">Deploying the help system </a>.</p>
+										<p>To start the application on the Websphere Application Server, see <a href="t_start_apps_was.html">Starting the applications</a>.</p>
+<!-- LJW: Make sure that "Jazz Web UI feature component" is the correct terminology to use. I believe that the Jazz Web UI is now called the "web client". -->
+
+		</div>
+		<div class="bigStep forupgradenew"  id="startFP"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.js javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+												<h3>Start Rational Focal Point.
+									 </h3> <!-- See this H3 immediately following a DIV.bigStep? This will become the title of your major task. The javascript will automatically add step numbers for you, so don't worry about that. -->
+
+												<p> After you start Rational Focal Point, change the administrator password. For more information, see <a href="t_starting_fp_for_the_first_time.html">Starting Rational Focal Point for the first time</a>.</p>
+		</div>
+
+		<div class="bigStep forupgradefivefour forupgradesixzero forupgradesixfourone forupgradesixfive"  id="migrateFP"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.js javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+														<h3>Migrate data from earlier versions of Rational Focal Point.
+											 </h3> <!-- See this H3 immediately following a DIV.bigStep? This will become the title of your major task. The javascript will automatically add step numbers for you, so don't worry about that. -->
+		<div class="whatYouNeed">
+					<p>To use your custom business rules, you must obtain the new compiled version from support and import it.</p><!-- LJW: Be more specific. What does "it" refer to? For example, "To use your custom business rules, you must obtain and import the new compiled version of the rules from support. -->
+		</div>
+		<p> For more information, see <a href="t_conf_rfp.html">Migrating data from earlier versions of Rational Focal Point</a>.</p>
+		</div>
+
+		<div class="bigStep"  id="maintainFP"> <!-- You'll notice that I use an ID here, instead of CLASSES. I do that because this particular step is ALWAYS going to happen. EVERY user must do this. Nothing that the user can choose in the form affects this step. You'll indicate in the roadmap.js javascript file which of these elements to ALWAYS show. You could also just as well add the class "seen" here. -->
+
+																<h3>Configure and maintain Rational Focal Point.
+													 </h3> <!-- See this H3 immediately following a DIV.bigStep? This will become the title of your major task. The javascript will automatically add step numbers for you, so don't worry about that. -->
+				<div class="whatYouNeed">
+							<p>To maintain the product, you must be an application or workspace administrator, as defined by the local usage policies.</p>
+				</div>
+				<p>For more information, see <a href="r_maintain_rfp.html">Maintaining Rational Focal Point</a>.</p>
+		</div>
+
+
+
+</div><!-- end div#results -->
+
+<!-- The scripts have to be here to account for conflicts with VCC/IEHSc -->
+<script type="text/javascript" src="dojo/dojo.js"></script>
+<script type="text/javascript" src="dojo/roadmap.js"></script>
+
+</body>
+</html>

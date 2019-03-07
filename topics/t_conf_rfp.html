@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" /><meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Migrating data from earlier versions of Rational Focal Point" />
+<meta name="abstract" content="After you upgrade to the latest version, you can migrate the baselines and reports that you generated in earlier versions. To use your custom business rules, you must obtain the new compiled version from support and import that version." />
+<meta name="Description" content="After you upgrade to the latest version, you can migrate the baselines and reports that you generated in earlier versions. To use your custom business rules, you must obtain the new compiled version from support and import that version." />
+<meta name="DC.subject" content="migration, product versions, upgrades, configuration" />
+<meta name="keywords" content="migration, product versions, upgrades, configuration" />
+<meta name="DC.Relation" scheme="URI" content="../../com.ibm.rational.fp.help.doc/topics/c_business_rules.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/c_post_install.html" />
+<meta name="copyright" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Date" scheme="iso8601" content="2013-03-18" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="t_conf_rfp" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Generated date: Mon Mar 18 07:52:17 EDT 2013-->
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="Start" href="../topics/c_post_install.html" />
+<title>Migrating data from earlier versions of Rational Focal Point</title>
+
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/collapse.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/popup.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/resizer.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/thumbnail.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/tutorials.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.ccl.feedreader/scripts/readFeed.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"><!-- // leave this comment here --></script>
+
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/help.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/tutorials.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/samples.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.ccl.feedreader/css/feeds.css" />
+<noscript>
+<style type="text/css"><!--
+div.collapsecontent{display:block;}
+//--></style>
+</noscript></head>
+<body onload="javascript:resizeAtPageLoad();" onresize="javascript:resizeAllImages();" id="t_conf_rfp">
+<h1 class="title topictitle1">Migrating data from earlier versions of <span class="keyword">Rational Focal Point</span></h1>
+<div class="body taskbody"><div>After you upgrade to the latest version, you can migrate
+the baselines and reports that you generated in earlier versions.
+To use your custom business rules, you must obtain the new compiled
+version from support and import that version.</div><div class="section prereq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div><ul class="ul"><li class="li">Follow the instructions in <a class="xref" href="t_migrate_fp.html" title="If you are upgrading from a release of Rational Focal Point that is earlier than version 6.4.1, you must uninstall the version. Before you upgrade to the latest version of IBM Rational Focal Point, you must create a backup of the database and some files.">Upgrading from releases of Rational Focal Point version 6.0</a>.</li>
+<li class="li">Install or upgrade to the latest version of <span class="keyword">IBM Rational Focal Point</span>. </li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><p class="li stepsection">To reuse the data from earlier versions of <span class="keyword">Rational Focal Point</span> in
+the latest version:</p><ol class="ol steps"><li class="li step stepexpand"><span class="ph cmd">Log on to <span class="keyword">Rational Focal Point</span>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">To use the custom business rules:</span><ul class="ul choices"><li class="li choice">From <span class="keyword">Rational Focal Point</span> 6.5.1.1
+release onwards: <p class="p">When you log on to <span class="keyword">Rational Focal Point</span>,
+a startup interrupted message is displayed if the updated custom business
+rule is not used. </p>
+<div class="p">To use the updated custom business rule:<ol class="ol" type="a"><li class="li">Copy the compiled version of custom business rules that you obtained
+from IBM Software support in the<span class="ph filepath">&lt; fpwar_deployed_in_server&gt;/fp/WEB-INF/expressions/</span> location.
+For example: <span class="ph filepath">&lt; TOMCAT_Home&gt;/webapp/fp/WEB-INF/expressions/</span></li>
+<li class="li">Restart <span class="keyword">Rational Focal Point</span></li>
+</ol>
+</div>
+</li>
+<li class="li choice">Releases earlier than <span class="keyword">Rational Focal Point</span> 6.5.1.1:<ol class="ol" type="a"><li class="li">Provide your list of business rules to IBM Software Support. To get the
+list, click <span class="ph menucascade"><span class="ph uicontrol">Advanced</span> &gt; <span class="ph uicontrol"> Business
+Rules</span></span> and copy the details of the business
+rules and the version information.</li>
+<li class="li">After IBM Software Support provides the updated custom business
+rules, click <span class="ph menucascade"><span class="ph uicontrol">Advanced</span> &gt; <span class="ph uicontrol"> Business
+Rules</span></span>.</li>
+<li class="li">Import the custom business rules to the database.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">To import the report images to the database, click <span class="ph menucascade"><span class="ph uicontrol">General </span> &gt; <span class="ph uicontrol">Report Images</span></span>. Import the required report images.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">To migrate the saved baselines, click <span class="ph menucascade"><span class="ph uicontrol">Advanced</span> &gt; <span class="ph uicontrol">Migrate Baselines</span></span>. Migrate the baselines to <span class="keyword">Rational Focal Point</span>.</span> For more information, see <a class="xref" href="../../com.ibm.rational.fp.help.doc/topics/t_migrate_baselines.html" title="From the Advanced menu, you can migrate baselines. Global administrators can migrate baselines even if they are not members of the workspace. If you are updating your installation from version 5 to version 6, you must migrate baselines.">Migrating baselines</a>.</li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+</div>
+
+<div class="linklist linklist">
+<div><a class="link" href="../../com.ibm.rational.fp.help.doc/topics/c_business_rules.html" title="You can use several default business rules. Each rule has an explanation, a version number, and compilation information. You can upload, export, and delete business rules on the Business Rules page of the Advanced menu.">Managing business rules</a></div></div>
+</div><span class="runningfooter">
+<hr />
+<a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=rdf" target="_blank">Feedback</a> 
+</span>
+</body>
+</html>

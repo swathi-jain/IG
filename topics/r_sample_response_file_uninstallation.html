@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" /><meta name="DC.Type" content="reference" />
+<meta name="DC.Title" content="Sample response file for uninstalling" />
+<meta name="abstract" content="You can use the sample response file in this topic to uninstall Rational Focal Point. You must modify the parameter values for your environment." />
+<meta name="Description" content="You can use the sample response file in this topic to uninstall Rational Focal Point. You must modify the parameter values for your environment." />
+<meta name="DC.subject" content="response files, uninstallation, response files, silent uninstallation" />
+<meta name="keywords" content="response files, uninstallation, response files, silent uninstallation" />
+<meta name="DC.Relation" scheme="URI" content="../topics/t_uninstall_rfp_silent.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/t_install_rfp_silent.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/t_uninstall_rfp_silent.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/t_create_response_file.html" />
+<meta name="copyright" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Date" scheme="iso8601" content="2013-03-18" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="r_sample_response_file" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Generated date: Mon Mar 18 07:52:17 EDT 2013-->
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="Start" href="../topics/t_uninstall_rfp_silent.html" />
+<title>Sample response file for Rational Focal Point silent uninstallation</title>
+
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/collapse.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/popup.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/resizer.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/thumbnail.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/tutorials.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.ccl.feedreader/scripts/readFeed.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"><!-- // leave this comment here --></script>
+
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/help.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/tutorials.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/samples.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.ccl.feedreader/css/feeds.css" />
+<noscript>
+<style type="text/css"><!--
+div.collapsecontent{display:block;}
+//--></style>
+</noscript></head>
+<body onload="javascript:resizeAtPageLoad();" onresize="javascript:resizeAllImages();" id="r_sample_response_file">
+<h1 class="title topictitle1">Sample response file for uninstalling</h1>
+<div class="body refbody"><div class="abstract"><span class="shortdesc">You can use the sample response file
+in this topic to uninstall <span class="keyword">Rational® Focal Point™</span>.
+You must modify the parameter values for your environment.</span>
+ For
+instructions to create a response file, see <a class="xref" href="t_create_response_file.html" title="To silently install or upgrade Rational Focal Point, you can use a response file that contains the data required to install the product.">Creating a response file manually</a>.</div>
+<div class="section">
+<div class="note learnmore"><div class="collapseheadlearnmore"><a href="javascript:void(0)" class="collapsehead" onclick="collapse(this)">Response file</a></div><div class="collapsecontent">A <dfn class="term">response file</dfn> is an XML file that contains
+the data required to complete installation or uninstallation operations
+silently.  <span class="keyword">IBM® Installation Manager</span> uses
+response files to complete uninstallation operations silently. <p class="p">You
+can record a response file by recording preferences and installation,
+upgrade, or uninstallation actions in the graphical user interface
+of <span class="keyword">Installation
+Manager</span>.
+Alternatively, you can create a response file manually by using the
+documented list of response file commands and preferences. </p>
+You
+can use one response file to install, update, or uninstall multiple
+products. For more information about response files, see the <a class="xref" href="http://publib.boulder.ibm.com/infocenter/install/v1r4/topic/com.ibm.silentinstall12.doc/topics/c_silent_response_files.html" target="_blank" title="(Opens in a new tab or window)">response file section in the <span class="keyword">Installation
+Manager</span> information
+center</a>.</div></div><div class="learnmorebase"> </div></div>
+<div class="section"><h2 class="title sectiontitle">Sample response file for uninstalling <span class="keyword">Rational Focal Point</span></h2><pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;agent-input&gt;
+
+&lt;profile id='IBM Rational Focal Point' installLocation='C:\Program Files (x86)\IBM\Rational\Focal Point'&gt;
+&lt;data key='eclipseLocation' value='C:\Program Files (x86)\IBM\Rational\Focal Point'/&gt;
+&lt;data key='user.import.profile' value='false'/&gt;
+&lt;data key='cic.selector.os' value='win32'/&gt;
+&lt;data key='cic.selector.ws' value='win32'/&gt;
+&lt;data key='cic.selector.arch' value='x86'/&gt;
+&lt;data key='cic.selector.nl' value='de,ru,ko,en,pt_BR,it,fr,hu,es,zh,iw,cs,ar,zh_TW,zh_HK,ja,pl'/&gt;	
+		&lt;!-- Server Type details --&gt;
+		&lt;data key='user.FP_SERVERTYPE,com.ibm.rational.focalpoint' value='TOMCAT'/&gt;
+			&lt;!-- [TOMCAT/WAS] --&gt;
+
+&lt;!-- Server Connection details required only for Tomcat server. Ignore this section for WAS server.   --&gt;
+&lt;data key='user.FP_SERVERHOME,com.ibm.rational.focalpoint' value='C:\Program Files (x86)\apache-tomcat-6.0.35'/&gt;
+&lt;data key='user.FP_SERVERPORT,com.ibm.rational.focalpoint' value='8080'/&gt;
+&lt;data key='user.FP_JDBCPASSWORD,com.ibm.rational.focalpoint' value='password'/&gt;
+
+&lt;!-- Database Connection details required only for Tomcat server. Ignore this section for WAS server  --&gt;
+&lt;data key='user.FP_DATABASETYPE,com.ibm.rational.focalpoint' value='POSTGRE'/&gt;
+
+ &lt;!-- [DB2,POSTGRE,ORACLE] --&gt;
+
+&lt;data key='user.FP_JDBCSERVER,com.ibm.rational.focalpoint' value='127.0.0.1'/&gt;
+&lt;data key='user.FP_JDBCPORT,com.ibm.rational.focalpoint' value='5432'/&gt;
+&lt;data key='user.FP_JDBCDBNAME,com.ibm.rational.focalpoint' value='focalpoint'/&gt;
+&lt;data key='user.FP_JDBCUSERNAME,com.ibm.rational.focalpoint' value='postgres'/&gt;
+&lt;data key='user.FP_JDBCMAXDATABASECONNECTIONS,com.ibm.rational.focalpoint' value='10'/&gt;
+
+&lt;data key='user.FP_SERVERMAXMEMORY,com.ibm.rational.focalpoint' value='500'/&gt;
+&lt;data key='user.FP_SERVER_64BIT,com.ibm.rational.focalpoint' value='true'/&gt;
+&lt;data key='user.FP_DEFAULTLOCALE,com.ibm.rational.focalpoint' value='en'/&gt;
+&lt;data key='user.FP_LICENSETYPE,com.ibm.rational.focalpoint' value='SERVER'/&gt;
+&lt;data key='user.FP_LICENSEHOME,com.ibm.rational.focalpoint' value=""/&gt;
+
+	&lt;/profile&gt;
+	&lt;uninstall modify='false'&gt;
+	&lt;offering id="com.ibm.rational.focalpoint" profile="IBM Rational Focal Point" features="com.ibm.rational.focalpoint.war,DeployFinancierWar"/&gt;
+&lt;/uninstall&gt;
+
+	&lt;!-- Preference values depends upon IT Infrastructure / setup --&gt;
+	&lt;preference name='com.ibm.cic.common.core.preferences.eclipseCache' value='C:\Program Files (x86)\IBM\SDP70Shared'/&gt;
+&lt;preference name='com.ibm.cic.common.core.preferences.connectTimeout' value='30'/&gt;
+&lt;preference name='com.ibm.cic.common.core.preferences.readTimeout' value='45'/&gt;
+&lt;preference name='com.ibm.cic.common.core.preferences.downloadAutoRetryCount' value='0'/&gt;
+&lt;preference name='offering.service.repositories.areUsed' value='true'/&gt;
+&lt;preference name='com.ibm.cic.common.core.preferences.ssl.nonsecureMode' value='false'/&gt;
+&lt;preference name='com.ibm.cic.common.core.preferences.http.disablePreemptiveAuthentication' value='false'/&gt;
+&lt;preference name='http.ntlm.auth.kind' value='NTLM'/&gt;
+&lt;preference name='http.ntlm.auth.enableIntegrated.win32' value='true'/&gt;
+&lt;preference name='com.ibm.cic.common.core.preferences.preserveDownloadedArtifacts' value='true'/&gt;
+&lt;preference name='com.ibm.cic.common.core.preferences.keepFetchedFiles' value='false'/&gt;
+&lt;preference name='PassportAdvantageIsEnabled' value='false'/&gt;
+&lt;preference name='com.ibm.cic.common.core.preferences.searchForUpdates' value='true'/&gt;
+&lt;preference name='com.ibm.cic.agent.ui.displayInternalVersion' value='false'/&gt;
+&lt;preference name='com.ibm.cic.common.sharedUI.showErrorLog' value='true'/&gt;
+&lt;preference name='com.ibm.cic.common.sharedUI.showWarningLog' value='true'/&gt;
+&lt;preference name='com.ibm.cic.common.sharedUI.showNoteLog' value='true'/&gt;
+&lt;/agent-input&gt;</code></pre>
+</div>
+<div class="section"><h2 class="title sectiontitle">Parameters that need to be modified in the sample
+response file</h2>Based on your environment, you
+must edit the parameters in your response file. The following tables
+show the parameters to modify.<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" rules="all" frame="border" border="1"><caption><span class="tablecap">Table 1. Parameters that must be
+modified based on your installation setup</span></caption><thead class="thead" align="left"><tr class="row" valign="bottom"><th class="entry" valign="bottom" width="38.88888888888889%" id="d9266e109">Attributes</th>
+<th class="entry" valign="bottom" width="61.111111111111114%" id="d9266e111">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="38.88888888888889%" headers="d9266e109 "><samp class="ph codeph"><var class="keyword varname">profile installLocation</var></samp> and <samp class="ph codeph"><var class="keyword varname">id</var></samp></td>
+<td class="entry" valign="top" width="61.111111111111114%" headers="d9266e111 ">Specify the <span class="keyword">Rational Focal Point</span> installation
+location.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="38.88888888888889%" headers="d9266e109 "><samp class="ph codeph"><var class="keyword varname">FP_SERVERTYPE</var></samp></td>
+<td class="entry" valign="top" width="61.111111111111114%" headers="d9266e111 ">Specify the application server type. Possible
+values: <ul class="ul"><li class="li"><kbd class="ph userinput">TOMCAT</kbd></li>
+<li class="li"><kbd class="ph userinput">WAS</kbd></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" rules="all" frame="border" border="1"><caption><span class="tablecap">Table 2. Parameters that must be specified in the response
+file if you are using Apache Tomcat server</span>. <span class="desc tabledesc"><div class="note note"><span class="notetitle">Note:</span> If you
+are using WebSphere Application Server, specify values for only FP_SERVERHOME
+and FP_SERVERPORT.</div>
+</span></caption><thead class="thead" align="left"><tr class="row" valign="bottom"><th class="entry" valign="bottom" width="31.313131313131315%" id="d9266e157">Attributes</th>
+<th class="entry" valign="bottom" width="68.68686868686868%" id="d9266e159">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="31.313131313131315%" headers="d9266e157 "><samp class="ph codeph"><var class="keyword varname">FP_SERVERHOME</var></samp></td>
+<td class="entry" valign="top" width="68.68686868686868%" headers="d9266e159 ">Specify the location of the application server
+home path. </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="31.313131313131315%" headers="d9266e157 "><samp class="ph codeph"><var class="keyword varname">FP_SERVERPORT </var></samp></td>
+<td class="entry" valign="top" width="68.68686868686868%" headers="d9266e159 ">Specify the connector port. </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="31.313131313131315%" headers="d9266e157 "><samp class="ph codeph"><var class="keyword varname">FP_DATABASETYPE</var></samp></td>
+<td class="entry" valign="top" width="68.68686868686868%" headers="d9266e159 ">Specify the database that is configured for <span class="keyword">Rational Focal Point</span>.
+Possible values: <ul class="ul"><li class="li"><kbd class="ph userinput">DB2</kbd></li>
+<li class="li"><kbd class="ph userinput">POSTGRE</kbd></li>
+<li class="li"><kbd class="ph userinput">ORACLE</kbd></li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="31.313131313131315%" headers="d9266e157 "><samp class="ph codeph"><var class="keyword varname">FP_JDBCSERVER</var></samp>, <samp class="ph codeph"><var class="keyword varname">FP_JDBCPORT</var></samp>,
+and <samp class="ph codeph"><var class="keyword varname">FP_JDBCDBNAME</var></samp></td>
+<td class="entry" valign="top" width="68.68686868686868%" headers="d9266e159 ">Specify the host name or IP address, port, and
+name of the database that is created for <span class="keyword">Rational Focal Point</span>.<div class="note note"><span class="notetitle">Note:</span> If
+you are using an Oracle database, specify the database SID instead
+of the database name.</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="31.313131313131315%" headers="d9266e157 "><samp class="ph codeph"><var class="keyword varname">FP_JDBCUSERNAME</var></samp> and <samp class="ph codeph"><var class="keyword varname">FP_JDBCPASSWORD</var></samp></td>
+<td class="entry" valign="top" width="68.68686868686868%" headers="d9266e159 ">Specify the database user name and password.<div class="note note"><span class="notetitle">Note:</span> <ul class="ul"><li class="li">For DB2® and PostgreSQL databases,
+the database connection parameters are the same settings that you
+specified when you installed the database.</li>
+<li class="li">For Oracle databases, specify the user name and the password that
+you created while creating the <span class="keyword">Rational Focal Point</span> schemas.</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="31.313131313131315%" headers="d9266e157 "><samp class="ph codeph"><var class="keyword varname">FP_LICENSETYPE</var></samp></td>
+<td class="entry" valign="top" width="68.68686868686868%" headers="d9266e159 ">Specify the license type.<ul class="ul"><li class="li"><kbd class="ph userinput">LATER</kbd>: You must specify the license information
+when you log in to <span class="keyword">Rational Focal Point</span>.</li>
+<li class="li"><kbd class="ph userinput">SERVER</kbd>: Specify the location of the license
+server in the following format: <samp class="ph codeph"><var class="keyword varname">port@host</var></samp>.
+For example: <kbd class="ph userinput">19353@licenseserver</kbd></li>
+<li class="li"><kbd class="ph userinput">FILE</kbd>: Specify the path of the license file.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+</div>
+<div class="relinfo reltasks"><strong>Related tasks</strong>:<br />
+<div><a class="link" href="../topics/t_install_rfp_silent.html" title="You can install or upgrade IBM Rational Focal Point from the command line by using response files rather than using the IBM Installation Manager graphical user interface.">Installing and upgrading Rational Focal Point silently</a></div>
+<div><a class="link" href="../topics/t_uninstall_rfp_silent.html" title="You can uninstall IBM Rational Focal Point from the command line by using a response file rather than using the IBM Installation Manager graphical user interface.">Uninstalling Rational Focal Point silently</a></div>
+<div><a class="link" href="../topics/t_create_response_file.html" title="To silently install or upgrade Rational Focal Point, you can use a response file that contains the data required to install the product.">Creating a response file manually</a></div>
+</div>
+</div><span class="runningfooter">
+<hr />
+<a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=rdf" target="_blank">Feedback</a> 
+</span>
+</body>
+</html>

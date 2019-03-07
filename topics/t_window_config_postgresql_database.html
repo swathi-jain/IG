@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" /><meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Configuring the PostgreSQL database" />
+<meta name="abstract" content="You can set up a PostgreSQL database to work with Rational Focal Point." />
+<meta name="Description" content="You can set up a PostgreSQL database to work with Rational Focal Point." />
+<meta name="DC.subject" content="databases, PostgreSQL, configuring, PostgreSQL databases, installation" />
+<meta name="keywords" content="databases, PostgreSQL, configuring, PostgreSQL databases, installation" />
+<meta name="DC.Relation" scheme="URI" content="../swf/postgre_setup.swf" />
+<meta name="DC.Relation" scheme="URI" content="http://www.postgresql.org/docs/" />
+<meta name="DC.Relation" scheme="URI" content="../topics/c_instl_setup_db.html" />
+<meta name="copyright" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Date" scheme="iso8601" content="2013-03-18" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="t_window_config_postgresql_database" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Generated date: Mon Mar 18 07:52:22 EDT 2013-->
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="Start" href="../topics/c_instl_setup_db.html" />
+<title>Configuring a PostgreSQL database for Rational Focal Point; RFP</title>
+
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/collapse.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/popup.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/resizer.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/thumbnail.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/tutorials.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.ccl.feedreader/scripts/readFeed.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"><!-- // leave this comment here --></script>
+
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/help.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/tutorials.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/samples.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.ccl.feedreader/css/feeds.css" />
+<noscript>
+<style type="text/css"><!--
+div.collapsecontent{display:block;}
+//--></style>
+</noscript></head>
+<body onload="javascript:resizeAtPageLoad();" onresize="javascript:resizeAllImages();" id="t_window_config_postgresql_database">
+<h1 class="title topictitle1">Configuring the PostgreSQL database</h1>
+<div class="body taskbody"><div><div class="showme"><div class="collapseheadshowme"><a href="javascript:void(0)" class="collapsehead" onclick="collapse(this)">Show Me</a></div><div class="collapsecontent"><div class="section"><object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" type="application/x-shockwave-flash" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" data="../swf/postgre_setup.swf" width="800" height="600"><param name="movie" value="../swf/postgre_setup.swf" /><param name="pluginspace" value="http://www.macromedia.com/go/getflashplayer" /><embed width="800" height="600" type="application/x-shockwave-flash" pluginspace="http://www.macromedia.com/go/getflashplayer" src="../swf/postgre_setup.swf"></embed></object></div></div></div>You can set up a PostgreSQL database to work with <span class="keyword">Rational® Focal Point™</span>.</div><div class="section prereq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div><ul class="ul"><li class="li">A PostgreSQL database version that is supported by <span class="keyword">Rational Focal Point</span> must
+be installed. For instructions, see the PostgreSQL documentation.</li>
+<li class="li">To properly handle Unicode content, the database character set
+must be UTF-8 encoding. </li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><p class="li stepsection">Before you install <span class="keyword">Rational Focal Point</span>,
+make sure that the following database configurations are completed.
+For instructions to configure the database, see the PostgreSQL documentation<div class="note note"><span class="notetitle">Note:</span> The
+postgres role that you use must have superuser privileges.</div>
+.</p><ol class="ol steps"><li class="li step stepexpand"><span class="ph cmd">Start the database server and create a database named <kbd class="ph userinput">focalpoint</kbd>. <span class="keyword">Rational Focal Point</span> uses
+the default PostgreSQL table space.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">In a dual server environment where <span class="keyword">Rational Focal Point</span> and
+the database are on different servers, to connect to PostgeSQL database,
+you must specify the <span class="keyword">Rational Focal Point</span> system
+details in the following file: <span class="ph filepath"><var class="keyword varname">PostgreSQL install
+directory</var>\data\pg_hba.conf</span>. </span><ol type="a" class="ol substeps"><li class="li substep substepexpand"><span class="ph cmd">Stop the database service and modify the required configurations
+file so that the <kbd class="ph userinput">focalpoint</kbd> database can accept
+connections from the application server in which <span class="keyword">Rational Focal Point</span> will
+be installed.</span> For example, in a text editor, open the <span class="ph filepath"><var class="keyword varname">PostgreSQL
+install directory</var>\data\pg_hba.conf</span> file and add
+the following line: <kbd class="ph userinput">host  all   all  <var class="keyword varname">IP address</var>/32
+ password</kbd><p class="p">where <kbd class="ph userinput"><var class="keyword varname">IP address</var></kbd> is
+the IP address of the application server where <span class="keyword">Rational Focal Point</span> will
+be installed.</p>
+</li>
+<li class="li substep substepexpand"><span class="ph cmd">Either allow access for the database port through any
+existing firewall or disable the firewall.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Restart the database server.</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+</div>
+<div class="relinfo"><strong>Related information</strong>:<br />
+<div><img src="../sout.gif" alt="" /><a class="link" href="http://www.postgresql.org/docs/" target="_blank" title="(Opens in a new tab or window)">PostgreSQL
+documentation</a></div>
+</div>
+</div><span class="runningfooter">
+<hr />
+<a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=rdf" target="_blank">Feedback</a> 
+</span>
+</body>
+</html>

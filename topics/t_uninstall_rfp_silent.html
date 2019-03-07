@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" /><meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Uninstalling Rational Focal Point silently" />
+<meta name="abstract" content="You can uninstall IBM Rational Focal Point from the command line by using a response file rather than using the IBM Installation Manager graphical user interface." />
+<meta name="Description" content="You can uninstall IBM Rational Focal Point from the command line by using a response file rather than using the IBM Installation Manager graphical user interface." />
+<meta name="DC.subject" content="silent installation, uninstallation, silent, response files, silent uninstallation" />
+<meta name="keywords" content="silent installation, uninstallation, silent, response files, silent uninstallation" />
+<meta name="DC.Relation" scheme="URI" content="../topics/c_install_rfp.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/r_sample_response_file_uninstallation.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/r_sample_response_file.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/r_sample_response_file_uninstallation.html" />
+<meta name="copyright" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Date" scheme="iso8601" content="2013-03-18" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="t_uninstall_rfp_silent" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Generated date: Mon Mar 18 07:52:21 EDT 2013-->
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="Start" href="../topics/c_install_rfp.html" />
+<title>Uninstalling Rational Focal Point silently</title>
+
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/collapse.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/popup.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/resizer.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/thumbnail.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/tutorials.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.ccl.feedreader/scripts/readFeed.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"><!-- // leave this comment here --></script>
+
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/help.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/tutorials.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/samples.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.ccl.feedreader/css/feeds.css" />
+<noscript>
+<style type="text/css"><!--
+div.collapsecontent{display:block;}
+//--></style>
+</noscript></head>
+<body onload="javascript:resizeAtPageLoad();" onresize="javascript:resizeAllImages();" id="t_uninstall_rfp_silent">
+<h1 class="title topictitle1">Uninstalling <span class="keyword">Rational Focal Point</span> silently</h1>
+<div class="body taskbody"><div>You can uninstall <span class="keyword">IBM® Rational® Focal Point™</span> from
+the command line by using a response file rather than using the <span class="keyword">IBM Installation Manager</span> graphical
+user interface. </div><div class="section prereq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div><p class="p">Stop the server.</p>
+</div>
+<div class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>You can use the sample response file to uninstall Rational
+Focal Point silently. You must modify the parameter values for your
+environment. Refer the topic on <a class="xref" href="http://publib.boulder.ibm.com/infocenter/install/v1r4/topic/com.ibm.silentinstall12.doc/topics/t_silentinstall_overview.html" target="_blank" title="(Opens in a new tab or window)">working in silent mode</a> in the <span class="keyword">Installation
+Manager</span> information center.</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><p class="li stepsection"> To uninstall <span class="keyword">Rational Focal Point</span> silently:</p><ol class="ol steps"><li class="li step stepexpand"><span class="ph cmd">Create a response file that contains the commands and inputs
+for the uninstallation process. For instructions to create and use
+a response file, see <a class="xref" href="t_create_response_file.html" title="To silently install or upgrade Rational Focal Point, you can use a response file that contains the data required to install the product.">Creating a response file manually</a>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Open a command prompt and change to the <span class="ph filepath">eclipse</span> directory:</span> For example: <samp class="ph codeph">cd c:\Program Files\IBM\Installation Manager\eclipse</samp></li>
+<li class="li step stepexpand"><span class="ph cmd">Enter the following command:</span> <ul class="ul"><li class="li">On Windows systems: <samp class="ph codeph">IBMIM.exe
+-silent input <var class="keyword varname">response_file_path_and_name</var> -log <var class="keyword varname">log_file_path_and_name</var></samp></li>
+<li class="li">On Linux systems: <samp class="ph codeph">./imcl
+input <var class="keyword varname">response_file_path_and_name</var> -log <var class="keyword varname">log_file_path_and_name</var></samp></li>
+</ul>
+<div class="note note"><span class="notetitle">Note:</span> The commands could change based on the version of <span class="keyword">Installation
+Manager</span>.
+For more information, refer the topics on <a class="xref" href="http://publib.boulder.ibm.com/infocenter/install/v1r4/topic/com.ibm.silentinstall12.doc/topics/t_silentinstall_overview.html" target="_blank" title="(Opens in a new tab or window)">Working in silent mode</a> in the <span class="keyword">Installation
+Manager</span> information center.</div>
+</li>
+</ol>
+<div class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div> <ul class="ul"><li class="li">The uninstallation process does not delete the application database. <span class="keyword">Rational Focal Point</span> can
+be installed again, and connected to the existing database. Delete
+the database manually if you do not require it for a future use.  </li>
+<li class="li">In a cluster topology, repeat the uninstallation process for each
+node. </li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><span class="ulchildlinktext"><a href="../topics/r_sample_response_file_uninstallation.html">Sample response file for uninstalling</a></span><br />
+You can use the sample response file
+in this topic to uninstall <span class="keyword">Rational Focal Point</span>.
+You must modify the parameter values for your environment.</li>
+</ul>
+
+<div class="familylinks">
+</div>
+<div class="relinfo relref"><strong>Related reference</strong>:<br />
+<div><a class="link" href="../topics/r_sample_response_file.html" title="You can use the sample response file in this topic to install Rational Focal Point. You must modify the parameter values for your installation environment.">Sample response file for installing and upgrading</a></div>
+<div><a class="link" href="../topics/r_sample_response_file_uninstallation.html" title="You can use the sample response file in this topic to uninstall Rational Focal Point. You must modify the parameter values for your environment.">Sample response file for uninstalling</a></div>
+</div>
+</div><span class="runningfooter">
+<hr />
+<a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=rdf" target="_blank">Feedback</a> 
+</span>
+</body>
+</html>

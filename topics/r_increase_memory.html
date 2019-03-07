@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" /><meta name="DC.Type" content="reference" />
+<meta name="DC.Title" content="Increasing application server memory" />
+<meta name="abstract" content="When you installed IBM Rational Focal Point, you specified the memory usage limit for the server. You can increase the memory usage for the application server by specifying it with an application server utility or by manually modifying the required files." />
+<meta name="Description" content="When you installed IBM Rational Focal Point, you specified the memory usage limit for the server. You can increase the memory usage for the application server by specifying it with an application server utility or by manually modifying the required files." />
+<meta name="DC.subject" content="memory, increasing, administration, Apache Tomcat, server configuration utility, servers, modifying" />
+<meta name="keywords" content="memory, increasing, administration, Apache Tomcat, server configuration utility, servers, modifying" />
+<meta name="DC.Relation" scheme="URI" content="../topics/r_maintain_rfp.html" />
+<meta name="copyright" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Date" scheme="iso8601" content="2013-03-18" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="r_increase_memory" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Generated date: Mon Mar 18 07:52:16 EDT 2013-->
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="Start" href="../topics/r_maintain_rfp.html" />
+<title>Increasing the memory of the application server</title>
+
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/collapse.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/popup.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/resizer.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/thumbnail.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/tutorials.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.ccl.feedreader/scripts/readFeed.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"><!-- // leave this comment here --></script>
+
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/help.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/tutorials.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/samples.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.ccl.feedreader/css/feeds.css" />
+<noscript>
+<style type="text/css"><!--
+div.collapsecontent{display:block;}
+//--></style>
+</noscript></head>
+<body onload="javascript:resizeAtPageLoad();" onresize="javascript:resizeAllImages();" id="r_increase_memory">
+<h1 class="title topictitle1">Increasing application server memory</h1>
+<div class="body refbody"><div>When you installed <span class="keyword">IBM® Rational® Focal Point™</span>,
+you specified the memory usage limit for the server. You can increase
+the memory usage for the application server by specifying it with
+an application server utility or by manually modifying the required
+files.</div><div class="section"><h2 class="title sectiontitle">Specifying memory by using the Apache Tomcat server
+utility</h2><div class="p">To increase the memory in Apache Tomcat server when
+the services are running, use the server configuration utility.<ol class="ol"><li class="li">Open the Apache Tomcat Properties window, and click <span class="ph uicontrol">Java</span>.</li>
+<li class="li">On the <span class="ph uicontrol">Java</span> tab, you can increase the values
+of the Max Perm Size for the Java virtual machine (JVM). You can also
+increase the memory pool.</li>
+</ol>
+</div>
+</div>
+<div class="section"><h2 class="title sectiontitle">Manually modifying the server configuration file</h2><ol class="ol"><li class="li">Open the <span class="keyword">Rational Focal Point</span> application
+server configuration file, which is in the following location:<ul class="ul"><li class="li">On Windows systems: <span class="ph filepath"><var class="keyword varname">application
+server home</var>/bin/fpenv.bat</span></li>
+<li class="li">On Linux systems: <span class="ph filepath"><var class="keyword varname">application
+server home</var>/bin/fpenv.sh</span></li>
+</ul>
+</li>
+<li class="li">In the configuration file, modify the required values:<ul class="ul"><li class="li">Allocate more server HEAP memory.</li>
+<li class="li">Allocate more server PERM memory.</li>
+<li class="li">Add more flags for optimizing JVM/Server for performance.</li>
+</ul>
+</li>
+<li class="li">Save the configuration file and restart the application server.</li>
+</ol>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+</div>
+</div><span class="runningfooter">
+<hr />
+<a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=rdf" target="_blank">Feedback</a> 
+</span>
+</body>
+</html>

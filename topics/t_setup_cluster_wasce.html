@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" /><meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Setting up clusters for Rational Focal Point" />
+<meta name="abstract" content="You can set up cluster configurations for IBM Rational Focal Point on an application server." />
+<meta name="Description" content="You can set up cluster configurations for IBM Rational Focal Point on an application server." />
+<meta name="DC.subject" content="servers, clusters, setup" />
+<meta name="keywords" content="servers, clusters, setup" />
+<meta name="DC.Relation" scheme="URI" content="http://www.ibm.com/software/webservers/appserv/was/library/" />
+<meta name="DC.Relation" scheme="URI" content="http://tomcat.apache.org/" />
+<meta name="DC.Relation" scheme="URI" content="../topics/r_maintain_rfp.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/c_install_fp_behind_proxy.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/c_cluster_topology.html" />
+<meta name="copyright" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Date" scheme="iso8601" content="2013-03-18" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="t_setup_cluster_wasce" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Generated date: Mon Mar 18 07:52:20 EDT 2013-->
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="Start" href="../topics/r_maintain_rfp.html" />
+<title>Setting up clusters for Rational Focal Point</title>
+
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/collapse.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/popup.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/resizer.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/thumbnail.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/tutorials.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.ccl.feedreader/scripts/readFeed.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"><!-- // leave this comment here --></script>
+
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/help.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/tutorials.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/samples.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.ccl.feedreader/css/feeds.css" />
+<noscript>
+<style type="text/css"><!--
+div.collapsecontent{display:block;}
+//--></style>
+</noscript></head>
+<body onload="javascript:resizeAtPageLoad();" onresize="javascript:resizeAllImages();" id="t_setup_cluster_wasce">
+<h1 class="title topictitle1">Setting up clusters for <span class="keyword">Rational Focal Point</span></h1>
+<div class="body taskbody"><div>You can set up cluster configurations for <span class="keyword">IBM® Rational® Focal Point™</span> on
+an application server.</div><div class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>For information about setting up the clusters in Apache Tomcat
+server and <span class="keyword">WebSphere® Application Server</span>,
+see the server documentation. <div class="p"><div class="note note"><span class="notetitle">Notes:</span> <ul class="ul"><li class="li">Synchronize the time between the systems that are running on a
+cluster node. Typically, time synchronization between systems is done
+by using the network time protocol.</li>
+<li class="li">If you set up clusters in <span class="keyword">WebSphere Application Server</span>,
+ensure that <span class="ph uicontrol">Configure HTTP session memory-to-memory replication</span> is
+not selected. After you set up the clusters in <span class="keyword">WebSphere Application Server</span> in
+the custom properties for JVM, add WAS_SERVER_NAME, with the cluster
+name as the value.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><p class="li stepsection">In one of the cluster node, perform the following steps:</p><ol class="ol steps"><li class="li step stepexpand"><span class="ph cmd">Start the application server and ensure that <span class="keyword">Rational Focal Point</span> is
+running.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Set a multicast group address in the database by setting
+an unused administratively-scoped (local) multicast address on your
+network. </span><ol type="a" class="ol substeps"><li class="li substep substepexpand"><span class="ph cmd">Log on to <span class="keyword">Rational Focal Point</span>.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">Advanced</span> &gt; <span class="ph uicontrol">SQL</span></span> and insert the following
+code:</span> <pre class="pre codeblock"><code>insert into projectsetting (pid,name,value) values (-2,'multicast.group.address','&lt;multicast address&gt;')</code></pre>
+For
+example, to set 239.0.0.1 as multicast address in the network, insert
+this code:<pre class="pre codeblock"><code>insert into projectsetting (pid,name,value) values (-2,'multicast.group.address','239.0.0.1')</code></pre>
+<div class="note important"><span class="importanttitle">Important:</span> Make sure that this multicast address
+does not interfere with other multicast address on your network. </div>
+</li>
+<li class="li substep substepexpand"><span class="ph cmd">Click <span class="ph uicontrol">Execute</span>.</span></li>
+</ol>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">To use a common help URL across the clustered instances,
+click <span class="ph menucascade"><span class="ph uicontrol">Advanced</span> &gt; <span class="ph uicontrol">SQL</span></span>, insert the following code, and click <span class="ph uicontrol">Execute</span>.</span> <pre class="pre codeblock"><code>update projectsetting set value='<var class="keyword varname">HELP_URL_VALUE</var>' where name='help.alternate.url'  and pid=-2</code></pre>
+ For
+example: <pre class="pre codeblock"><code>update projectsetting set value='http://www.example.com:8080/fphelp/index.jsp' where name='help.alternate.url'  and pid=-2</code></pre>
+</li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related concepts</strong>:<br />
+<div><a class="link" href="../topics/c_install_fp_behind_proxy.html" title="You can install Rational Focal Point on a computer that is behind a proxy server.">Paths for installing Rational Focal Point behind a proxy server</a></div>
+<div><a class="link" href="../topics/c_cluster_topology.html" title="IBM Rational Focal Point can be set up on a clustered environment to enable failover and load balancing.">Cluster topology example</a></div>
+</div>
+<div class="relinfo"><strong>Related information</strong>:<br />
+<div><img src="../sout.gif" alt="" /><a class="link" href="http://www.ibm.com/software/webservers/appserv/was/library/" target="_blank" title="(Opens in a new tab or window)">Websphere application server documentation</a></div>
+<div><img src="../sout.gif" alt="" /><a class="link" href="http://tomcat.apache.org/" target="_blank" title="(Opens in a new tab or window)">Apache Tomcat server documentation</a></div>
+</div>
+</div><span class="runningfooter">
+<hr />
+<a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=rdf" target="_blank">Feedback</a> 
+</span>
+</body>
+</html>

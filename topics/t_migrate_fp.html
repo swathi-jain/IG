@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" /><meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Upgrading from releases of Rational Focal Point version 6.0" />
+<meta name="abstract" content="If you are upgrading from a release of Rational Focal Point that is earlier than version 6.4.1, you must uninstall the version. Before you upgrade to the latest version of IBM Rational Focal Point, you must create a backup of the database and some files." />
+<meta name="Description" content="If you are upgrading from a release of Rational Focal Point that is earlier than version 6.4.1, you must uninstall the version. Before you upgrade to the latest version of IBM Rational Focal Point, you must create a backup of the database and some files." />
+<meta name="DC.subject" content="migration, product versions, upgrades, report images, locations, business rules" />
+<meta name="keywords" content="migration, product versions, upgrades, report images, locations, business rules" />
+<meta name="DC.Relation" scheme="URI" content="../../com.ibm.rational.fp.help.doc/topics/t_verify_integrity.html" />
+<meta name="DC.Relation" scheme="URI" content="../../com.ibm.rational.fp.help.doc/topics/c_business_rules.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/c_upgrade_earlier_version.html" />
+<meta name="copyright" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Date" scheme="iso8601" content="2013-03-18" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="t_migrate_fp" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Generated date: Mon Mar 18 07:52:19 EDT 2013-->
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="Start" href="../topics/c_upgrade_earlier_version.html" />
+<title>Upgrading from releases of Rational Focal Point version 6.0</title>
+
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/collapse.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/popup.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/resizer.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/thumbnail.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/tutorials.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.ccl.feedreader/scripts/readFeed.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"><!-- // leave this comment here --></script>
+
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/help.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/tutorials.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/samples.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.ccl.feedreader/css/feeds.css" />
+<noscript>
+<style type="text/css"><!--
+div.collapsecontent{display:block;}
+//--></style>
+</noscript></head>
+<body onload="javascript:resizeAtPageLoad();" onresize="javascript:resizeAllImages();" id="t_migrate_fp">
+<h1 class="title topictitle1">Upgrading from releases of <span class="keyword">Rational Focal Point</span> version
+6.0</h1>
+<div class="body taskbody"><div>If you are upgrading from a release of <span class="keyword">Rational® Focal Point™</span> that
+is earlier than version 6.4.1, you must uninstall the version. Before
+you upgrade to the latest version of <span class="keyword">IBM® Rational Focal Point</span>,
+you must create a backup of the database and some files. </div><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand"><span class="ph cmd">Open your instance of <span class="keyword">Rational Focal Point</span> and
+verify the view definitions on the Views page (<span class="ph menucascade"><span class="ph uicontrol">Advanced</span> &gt; <span class="ph uicontrol">Verify Integrity</span> &gt; <span class="ph uicontrol">Views</span></span>). Fix any broken view definitions that are limitations
+for incoming link attributes, including views in inactive or archived
+workspace.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Log on to <span class="keyword">Rational Focal Point</span> and
+export the custom business rules.</span> <div class="note important"><span class="importanttitle">Important:</span> After
+you install the latest release of <span class="keyword">Rational Focal Point</span>,
+for compatibility reasons, you must request your custom business rules
+from the IBM <span class="keyword">Rational Focal Point</span> support
+team. Only the common business rules are included in the installation.
+The common business rules are <samp class="ph codeph">ChoiceAttributeText, LinkByText,
+LinkInfo, LinkListAttributeSum, ListAttributeSum, MailImport, MatrixWriter,
+SetChoice,</samp> and <samp class="ph codeph">TrafficLight</samp>. Incompatible
+business rules are ignored.</div>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">Back up the database.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Stop the application server and uninstall <span class="keyword">Rational Focal Point</span>.</span> To uninstall a release of <span class="keyword">Rational Focal Point</span> that
+is earlier than version 6.4.1:<ol type="a" class="ol substeps"><li class="li substep"><span class="ph cmd">On Windows systems,
+click <span class="ph menucascade"><span class="ph uicontrol">Start </span> &gt; <span class="ph uicontrol">Control
+Panel</span> &gt; <span class="ph uicontrol">Add or Remove Program</span></span> and uninstall the product.</span></li>
+<li class="li substep"><span class="ph cmd">On Linux systems,
+enter the following command: <kbd class="ph userinput">rpm -ev focalpoint</kbd></span></li>
+<li class="li substep"><span class="ph cmd">On Solaris systems, enter the following command: <kbd class="ph userinput">pkgrm
+FOCAfp</kbd></span></li>
+</ol>
+ <div class="note note"><span class="notetitle">Note:</span> On UNIX systems,
+the Apache Tomcat application server is uninstalled when you uninstall <span class="keyword">IBM Rational Focal Point</span>.
+Before you install the latest release, you must install the application
+server.</div>
+</li>
+</ol>
+<div class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>Install the latest release of <span class="keyword">Rational Focal Point</span> and
+then complete the tasks in <a class="xref" href="t_conf_rfp.html" title="After you upgrade to the latest version, you can migrate the baselines and reports that you generated in earlier versions. To use your custom business rules, you must obtain the new compiled version from support and import that version.">Migrating data from earlier versions of Rational Focal Point</a>.</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+</div>
+
+<div class="linklist linklist">
+<div><a class="link" href="../../com.ibm.rational.fp.help.doc/topics/t_verify_integrity.html" title="You can test a workspace by using the Verify Integrity page for the workspace.">Verifying workspace integrity</a></div>
+<div><a class="link" href="../../com.ibm.rational.fp.help.doc/topics/c_business_rules.html" title="You can use several default business rules. Each rule has an explanation, a version number, and compilation information. You can upload, export, and delete business rules on the Business Rules page of the Advanced menu.">Managing business rules</a></div></div>
+</div><span class="runningfooter">
+<hr />
+<a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=rdf" target="_blank">Feedback</a> 
+</span>
+</body>
+</html>

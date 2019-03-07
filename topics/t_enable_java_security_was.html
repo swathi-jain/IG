@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" /><meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Enabling Java 2 security for Rational Focal Point on WebSphere Application Server" />
+<meta name="abstract" content="You can restrict the application access to local resources by enabling the Java 2 security option on WebSphere Application Server, version 7.0.0.17. WebSphere Application Server, version 7.0.0.17 requires ojdbc6.jar to connect to the Oracle database." />
+<meta name="Description" content="You can restrict the application access to local resources by enabling the Java 2 security option on WebSphere Application Server, version 7.0.0.17. WebSphere Application Server, version 7.0.0.17 requires ojdbc6.jar to connect to the Oracle database." />
+<meta name="DC.subject" content="WAS, security policy, Java 2 security" />
+<meta name="keywords" content="WAS, security policy, Java 2 security" />
+<meta name="DC.Relation" scheme="URI" content="http://www.ibm.com/support/docview.wss?uid=swg21497098" />
+<meta name="DC.Relation" scheme="URI" content="../topics/c_post_install.html" />
+<meta name="copyright" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Date" scheme="iso8601" content="2013-03-18" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="t_enable_java_security_was" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Generated date: Mon Mar 18 07:52:17 EDT 2013-->
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="Start" href="../topics/c_post_install.html" />
+<title>Enabling Java 2 security for Rational Focal Point on WebSphere Application Server, version 7.0.0.17.</title>
+
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/collapse.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/popup.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/resizer.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/thumbnail.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/tutorials.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.ccl.feedreader/scripts/readFeed.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"><!-- // leave this comment here --></script>
+
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/help.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/tutorials.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/samples.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.ccl.feedreader/css/feeds.css" />
+<noscript>
+<style type="text/css"><!--
+div.collapsecontent{display:block;}
+//--></style>
+</noscript></head>
+<body onload="javascript:resizeAtPageLoad();" onresize="javascript:resizeAllImages();" id="t_enable_java_security_was">
+<h1 class="title topictitle1">Enabling Java 2 security for <span class="keyword">Rational Focal Point</span> on <span class="keyword">WebSphere Application Server</span></h1>
+<div class="body taskbody"><div>You can restrict the application access to local resources
+by enabling the Java 2 security option on <span class="keyword">WebSphere® Application Server</span>,
+version 7.0.0.17. <span class="keyword">WebSphere Application Server</span>,
+version 7.0.0.17 requires <span class="ph filepath">ojdbc6.jar</span> to connect
+to the Oracle database. </div><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand"><span class="ph cmd">Stop the server and clear the <span class="keyword">WebSphere Application Server</span> cache.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Enable Java 2 Security for <span class="keyword">Rational® Focal Point™</span>:</span><ol type="a" class="ol substeps"><li class="li substep"><span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">Security</span> &gt; <span class="ph uicontrol">Global Security</span></span>.</span></li>
+<li class="li substep"><span class="ph cmd">Select the <span class="ph uicontrol">Use Java 2 security to restrict
+application access to local resources</span> check box.</span></li>
+</ol>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">Update <samp class="ph codeph">library.policy</samp> and <samp class="ph codeph">was.policy</samp> files:</span><ol type="a" class="ol substeps"><li class="li substep substepexpand"><span class="ph cmd">In the computer where the deployment manager is configured,
+extract the <span class="ph filepath"><var class="keyword varname">FP_HOME</var>/artifacts/JavaSecurityPolicyFiles/fp_j2security.zip</span> file
+that contains the was.policy and python script.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Make sure that the nodes are servers are stopped.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Start the deployment manager.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Open the command prompt/shell.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Go to <samp class="ph codeph">&lt;WAS_HOME&gt;/profiles/&lt;Manager Name&gt;/bin</samp>.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Run the command:</span> <pre class="pre codeblock"><code>wsadmin.sh –user <var class="keyword varname">username</var> -password <var class="keyword varname">password</var> -lang jython –f <var class="keyword varname">python script location</var> <var class="keyword varname">cellname</var> <var class="keyword varname">nodename</var> <var class="keyword varname">library.policy file location</var> <var class="keyword varname">was.policy file location</var></code></pre>
+For
+example,<pre class="pre codeblock"><code>wsadmin.sh -user admin -password focalpoint -lang jython -f C:/WASpolicyFiles/updatepolicy.py hraphaelCell01 hraphaelNode01 C:/WASpolicyFiles/library.policy C:/WASpolicyFiles/was.policy</code></pre>
+<div class="note note"><span class="notetitle">Notes:</span> <ul class="ul"><li class="li">If you have more than one node, provide the node names as values
+that are separated by comma. For example, <span class="keyword parmname parmname">hraphaelNode01,hraphaelNode05</span>.</li>
+<li class="li">Single space is the delimiter for command line arguments.</li>
+<li class="li">If the folder name contains a space, make sure to replace the
+short name <span class="ph filepath">C:/Program Files</span> with <span class="ph filepath">C:/PROGRA~1</span>.
+Go to <span class="ph filepath">C:\</span> drive and run the command <span class="ph filepath">dir\x</span> to
+get the short name. This is applicable for Windows operating system
+only. For other operating systems, do not create directory with spaces.</li>
+<li class="li">Make sure to use forward slashes as the file separator.</li>
+<li class="li">While running the script, type <samp class="ph codeph">y</samp> to continue
+to modify the local <span class="ph filepath">library.policy</span> file.<pre class="pre codeblock"><code>           grant{	
+                    permission java.security.AllPermission;
+           };</code></pre>
+Save the file. Type <samp class="ph codeph">y</samp> in
+the console and press the Enter key to continue.</li>
+<li class="li">The location of library.policy file is the location to which to
+extract the contents. For example, if you specify the location as
+C:\library.policy, and if the library.policy file does not exist,
+a library.policy is created in the C drive and copies the contents
+from the nodes library.policy file to the newly created policy file.
+If the library.policy already exists, the policy file is overwritten
+by the contents of the nodes library.policy file.</li>
+<li class="li">If the error, <samp class="ph codeph">[SOAPExceptionL faultCode=SOAP-ENV:Client;
+msg=Read timed out; targetException=java.net.SocketTimeoutException:
+Read timed out.</samp> is displayed, perform the following steps:<ol class="ol" type="i"><li class="li">Stop the manger.</li>
+<li class="li">Open the soap.client.props file that is located in <span class="ph filepath"><var class="keyword varname">WAS_HOME</var>\profiles\&lt;ManagerName&gt;\properties\soap.client.props</span>. </li>
+<li class="li">Set the value of com.ibm.SOAP.requestTimeout to a higher value
+and save the file. A value of <samp class="ph codeph">0</samp> ensures that the
+SOAP request will not time out.</li>
+<li class="li">Start the manager and run the commands again.</li>
+</ol>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">Restart the node and server.</span></li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+</div>
+<div class="relinfo"><strong>Related information</strong>:<br />
+<div><img src="../sout.gif" alt="" /><a class="link" href="http://www.ibm.com/support/docview.wss?uid=swg21497098" target="_blank" title="(Opens in a new tab or window)">Technical document on <span class="keyword">WebSphere Application Server</span> issue</a></div>
+</div>
+</div><span class="runningfooter">
+<hr />
+<a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=rdf" target="_blank">Feedback</a> 
+</span>
+</body>
+</html>

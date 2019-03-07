@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<!--© Copyright IBM Corporation 1997, 2011-->
+<toc label="Installing Rational Focal Point"
+     link_to="../com.ibm.help.common.nav.doc/install_toc.xml#install"
+     topic="topics/c_install_rfp.html">
+   <topic label="Installing and upgrading Rational Focal Point"
+          href="topics/c_install_rfp.html">
+      <topic label="Installation terminology" href="topics/c_intro_term.html"/>
+      <topic label="Sample: Rational Focal Point installation demonstration"
+             href="topics/rfp_install_demo_sample.html"/>
+      <topic label="Interactive guide for installing or upgrading Rational Focal Point"
+             href="topics/roadmap_form.html"/>
+      <topic label="Planning the installation" href="topics/c_plan_over_product.html">
+         <topic label="Installation road map" href="topics/c_roadmap_over_product.html"/>
+         <topic label="Topology examples">
+            <topic label="Simple installation topology"
+                   href="topics/c_simple_install_topology.html"/>
+            <topic label="Cluster topology" href="topics/c_cluster_topology.html"/>
+         </topic>
+         <topic label="Installation Manager overview" href="topics/c_plan_imover.html"/>
+         <topic label="Installation requirements" href="topics/c_plan_req_over_product.html">
+            <topic label="System requirements" href="topics/c_plan_req_hardsoft_product.html"/>
+            <topic label="User account and permission requirements"
+                   href="topics/c_plan_req_user_product.html"/>
+         </topic>
+         <topic label="License requirements" href="topics/r_license_requirements.html"/>
+         <topic label="Paths for installing Rational Focal Point behind a proxy server"
+                href="topics/c_install_fp_behind_proxy.html"/>
+      </topic>
+      <topic label="Preinstallation tasks" href="topics/c_pre_install_tasks.html">
+         <topic label="Setting up databases" href="topics/c_instl_setup_db.html">
+            <topic label="Configuring the PostgreSQL database"
+                   href="topics/t_window_config_postgresql_database.html"/>
+            <topic label="Configuring an Oracle database"
+                   href="topics/t_win_configuring_oracle.html"/>
+            <topic label="Configuring a DB2 database" href="topics/t_win_configuring_db2.html"/>
+         </topic>
+         <topic label="Installing the licenses for Rational Focal Point"
+                href="topics/t_install_rfp_license.html"/>
+      </topic>
+      <topic label="Upgrading from earlier versions"
+             href="topics/c_upgrade_earlier_version.html">
+         <topic label="Upgrading from releases of version 5.4"
+                href="topics/t_upgrade_from_54.html"/>
+         <topic label="Upgrading from releases of Rational Focal Point version 6.0"
+                href="topics/t_migrate_fp.html"/>
+         <topic label="Upgrading from releases of Rational Focal Point version 6.4.1"
+                href="topics/t_upgrading_from_641.html"/>
+         <topic label="Upgrading from a release of Rational Focal Point version 6.5"
+                href="topics/t_upgrade_rfp_65.html"/>
+         <topic label="Upgrading Rational Focal Point"
+                href="topics/t_upgrading_new_release.html"/>
+      </topic>
+      <topic label="Installing Rational Focal Point" href="topics/t_install_rfp.html"/>
+      <topic label="Post-installation tasks" href="topics/c_post_install.html">
+         <topic label="Starting the Apache Tomcat server"
+                href="topics/t_start_apps_apache.html"/>
+         <topic label="Setting up and starting Websphere Application Server">
+            <topic label="Setting up WebSphere Application Server"
+                   href="topics/t_setup_install_was.html"/>
+            <topic label="Deploying Rational Focal Point on WebSphere Application Server"
+                   href="topics/t_install_rfp_on_was.html">
+               <topic label="Deploying the Rational Focal Point application"
+                      href="topics/t_install_rfpapp_was.html"/>
+               <topic label="Deploying the financial feature component"
+                      href="topics/t_install_financail_was.html"/>
+               <topic label="Deploying the Jazz Web UI feature component"
+                      href="topics/t_install_jazz_was.html"/>
+               <topic label="Deploying the help system" href="topics/t_install_help_was.html"/>
+            </topic>
+            <topic label="Starting the Rational Focal Point application and the components"
+                   href="topics/t_start_apps_was.html"/>
+            <topic label="Enabling Java 2 security for Rational Focal Point on WebSphere Application Server"
+                   href="topics/t_enable_java_security_was.html"/>
+         </topic>
+         <topic label="Migrating data from earlier versions" href="topics/t_conf_rfp.html"/>
+      </topic>
+      <topic label="Starting Rational Focal Point for the first time"
+             href="topics/t_starting_fp_for_the_first_time.html"/>
+      <topic label="Maintaining Rational Focal Point" href="topics/r_maintain_rfp.html">
+         <topic label="Rational Focal Point log files" href="topics/r_fp_logs.html"/>
+         <topic label="Enabling access to the ping servlet"
+                href="topics/t_enable_pingservlet.html"/>
+         <topic label="Commands for monitoring Rational Focal Point"
+                href="topics/r_monitor_fp.html"/>
+         <topic label="Increasing application server memory"
+                href="topics/r_increase_memory.html"/>
+         <topic label="Setting up clusters for Rational Focal Point"
+                href="topics/t_setup_cluster_wasce.html"/>
+      </topic>
+      <topic label="Uninstalling Rational Focal Point"
+             href="topics/t_uninstall_offering.html"/>
+      <topic label="Installing and upgrading Rational Focal Point silently"
+             href="topics/t_install_rfp_silent.html">
+         <topic label="Creating a response file manually"
+                href="topics/t_create_response_file.html"/>
+         <topic label="Sample response file for installing and upgrading"
+                href="topics/r_sample_response_file.html"/>
+      </topic>
+      <topic label="Uninstalling Rational Focal Point silently"
+             href="topics/t_uninstall_rfp_silent.html">
+         <topic label="Sample response file for uninstalling"
+                href="topics/r_sample_response_file_uninstallation.html"/>
+      </topic>
+   </topic>
+</toc>

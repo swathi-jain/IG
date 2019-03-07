@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" /><meta name="DC.Type" content="reference" />
+<meta name="DC.Title" content="Commands for monitoring Rational Focal Point" />
+<meta name="abstract" content="You can check the status of the IBM Rational Focal Point application from a web browser by specifying the commands in the URL field." />
+<meta name="Description" content="You can check the status of the IBM Rational Focal Point application from a web browser by specifying the commands in the URL field." />
+<meta name="DC.subject" content="Rational Focal Point, monitoring, commands, administration" />
+<meta name="keywords" content="Rational Focal Point, monitoring, commands, administration" />
+<meta name="DC.Relation" scheme="URI" content="../topics/r_maintain_rfp.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/t_enable_pingservlet.html" />
+<meta name="copyright" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Date" scheme="iso8601" content="2013-03-18" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="r_monitor_fp" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Generated date: Mon Mar 18 07:52:16 EDT 2013-->
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="Start" href="../topics/r_maintain_rfp.html" />
+<title>Commands for monitoring the status of Rational Focal Point</title>
+
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/collapse.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/popup.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/resizer.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/thumbnail.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/tutorials.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.ccl.feedreader/scripts/readFeed.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"><!-- // leave this comment here --></script>
+
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/help.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/tutorials.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/samples.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.ccl.feedreader/css/feeds.css" />
+<noscript>
+<style type="text/css"><!--
+div.collapsecontent{display:block;}
+//--></style>
+</noscript></head>
+<body onload="javascript:resizeAtPageLoad();" onresize="javascript:resizeAllImages();" id="r_monitor_fp">
+<h1 class="title topictitle1">Commands for monitoring <span class="keyword">Rational Focal Point</span></h1>
+<div class="body refbody"><div class="abstract"><span class="shortdesc">You can check the status of the <span class="keyword">IBM® Rational® Focal Point™</span> application
+from a web browser by specifying the commands in the URL field. </span>
+Before
+you can monitor the application, you must enable the ping servlet
+option. For information about enabling the ping servlet option, see
+“Enabling access to the ping servlet.”</div>
+<div class="section"><div class="p"><div class="note restriction"><span class="restrictiontitle">Restriction:</span> The ping servlet security feature
+is enabled for version 6.5.1 and later of <span class="keyword">Rational Focal Point</span>. </div>
+</div>
+You
+can monitor the status by using the commands that are in the following
+table:<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" rules="all" frame="border" border="1"><caption><span class="tablecap">Table 1. Commands to monitor the status of the application</span></caption><thead class="thead" align="left"><tr class="row" valign="bottom"><th class="entry" valign="bottom" id="d6789e82">Command</th>
+<th class="entry" valign="bottom" id="d6789e84">Reply</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" headers="d6789e82 "><samp class="ph codeph">http://<var class="keyword varname">host name</var>:<var class="keyword varname">port
+number</var>/fp/servlet/Ping?cmd=ping</samp><div class="note note"><span class="notetitle">Note:</span> By default,
+the port number is 8080.</div>
+</td>
+<td class="entry" valign="top" headers="d6789e84 "><ul class="ul"><li class="li">Pong: The applications and the database are active and running.</li>
+<li class="li">Dead or no response: A problem exists.</li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" headers="d6789e82 "><p class="p"><samp class="ph codeph">http://<var class="keyword varname">host name</var>:<var class="keyword varname">port
+number</var>/fp/servlet/Ping?cmd=stats</samp></p>
+<p class="p"><samp class="ph codeph">http://<var class="keyword varname">host
+name</var>:<var class="keyword varname">port number</var>/fp/servlet/Ping?cmd=htmlstats</samp></p>
+</td>
+<td class="entry" valign="top" headers="d6789e84 ">An XML or and HTML file is shown that describes
+the application state.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" headers="d6789e82 "><samp class="ph codeph">http://<var class="keyword varname">host name</var>:<var class="keyword varname">port
+number</var>/fp/servlet/Ping?cmd=version</samp></td>
+<td class="entry" valign="top" headers="d6789e84 ">The application version is displayed.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" headers="d6789e82 "><samp class="ph codeph">http://<var class="keyword varname">host name</var>:<var class="keyword varname">port
+number</var>/fp/servlet/Ping?cmd=log&amp;mode=text&amp;filename=fp.<var class="keyword varname">YYYY-MM-DD</var>.log</samp></td>
+<td class="entry" valign="top" headers="d6789e84 ">The log file that is generated on the specified
+date is displayed. <p class="p">If you specify the mode as <kbd class="ph userinput">text</kbd>,
+the log is displayed in a text format. To download the file, specify
+the mode as <kbd class="ph userinput">gz</kbd>.</p>
+<div class="p">To access the <span class="ph filepath">SystemOut.log</span> file,
+specify the details in the following format: <span class="ph filepath"><var class="keyword varname">server
+name</var>/SystemOut.log</span> <div class="note note"><span class="notetitle">IBM WebSphere Application Server:</span> Ensure that
+the <span class="ph filepath">fp-logging.properties</span> file is configured
+with the correct location for logs.</div>
+</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" headers="d6789e82 "><samp class="ph codeph">http://<var class="keyword varname">host name</var>:<var class="keyword varname">port
+number</var>/fp/servlet/Ping?cmd=threaddump</samp></td>
+<td class="entry" valign="top" headers="d6789e84 ">The thread dumps are displayed.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" headers="d6789e82 "><samp class="ph codeph">http://<var class="keyword varname">host name</var>:<var class="keyword varname">port
+number</var>/fp/servlet/Ping?cmd=threads</samp></td>
+<td class="entry" valign="top" headers="d6789e84 ">Information about the threads is displayed.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" headers="d6789e82 "><samp class="ph codeph">http://<var class="keyword varname">host name</var>:<var class="keyword varname">port
+number</var>/fp/servlet/Ping?cmd=properties</samp></td>
+<td class="entry" valign="top" headers="d6789e84 ">System information is displayed.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+</div>
+<div class="relinfo reltasks"><strong>Related tasks</strong>:<br />
+<div><a class="link" href="../topics/t_enable_pingservlet.html" title="Although the ping servlet is useful for remote debugging, it might reveal sensitive server information. To protect sensitive information, you can enable access for the servlet by using both basic HTTP authentication and client network address filtering. After you enable access to the ping servlet, you can check the status of the application.">Enabling access to the ping servlet</a></div>
+</div>
+</div><span class="runningfooter">
+<hr />
+<a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=rdf" target="_blank">Feedback</a> 
+</span>
+</body>
+</html>

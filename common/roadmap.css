@@ -1,0 +1,381 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	color: #333;
+	background-color: white;
+}
+
+p {
+	margin: 0 0 .5em 0;
+}
+
+a {
+	color: #7696BC;
+}
+
+a:visited {
+	color: #996699;
+}
+
+caption {
+	font-style: italic;
+	margin-top: 20px;
+	background:#eee;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #ff962c;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+#pagetitle {
+	margin-bottom: 0.2em;
+}
+
+#shortDesc {
+	margin-bottom: 1.5em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+#results h2 {
+	color: #333;
+}
+
+div.note {
+	padding:.8em .8em .8em 24px;
+	margin-bottom:1em;
+	border:2px solid #FFD324;
+	background-color:#FFF6BF;
+	color: #514721;
+}
+
+span.notetitle {font-weight: bold;}
+
+fieldset {
+	margin: 0 0 1.6em 0;
+	padding: 0;
+	border: 0;
+}
+
+legend { 
+	font-weight: bold;
+	padding: 0 0 0.35em 0;
+	margin: 0;
+	color: #333;
+}
+
+#qa {
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
+#qa h2 {
+	margin-top: 0;
+}
+
+.option_selected {
+	background-color: #FFF4C5;
+}
+
+#theForm ul {
+	list-style-type: none;
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+#theForm li {
+	margin: 0 0 7px;
+	padding: 0;
+}
+
+input, label {
+	display: inline-block;
+	*display:inline;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+label {
+	margin-left: 3px;
+}
+
+.has_csh {
+	border-bottom: 1px dashed blue;
+	position: relative;
+	zoom: 1;
+}
+
+.csh {
+	display: none;
+}
+
+#theForm .csh p {
+	font-weight: normal;
+	margin: 0;
+}
+
+button {
+	cursor: pointer;
+}
+
+#form_reset, #startOver {
+	border: none;
+	background: none;
+	padding: 0;
+	margin: 0 0 0 5px;
+ 	color: #7696BC;
+	letter-spacing: 0;
+	display: inline-block;
+	*display: inline;
+}
+
+#startOver {
+	margin: 0;
+}
+
+#form_reset:hover {
+	color: #996699;
+	text-decoration: underline;
+}
+
+.takeaway {
+	font-weight: bold;
+}
+
+.filepath {
+	font-family: monospace;
+}
+
+.variable {
+	font-style: italic;
+}
+
+#results, #results  div.bigStep.seen, #results h2, #tableOfContents {
+	opacity: 0;
+	filter: alpha(opacity = 0); /* IE6-7 specific styles */
+	zoom:1; /*Needed to trigger hasLayout for IE */
+}
+
+#results.showIt, #results.showIt div.bigStep.seen, #results.showIt h2, #results.showIt #tableOfContents {
+	opacity:1;
+	filter: alpha(disabled); /* IE6-7 specific styles. IT MUST BE DISABLED OR ELSE TEXT IS MAD GARBLED */
+	zoom: 1; /*Needed to trigger hasLayout for IE */
+	background-color: white; /* Needed to make up for the fact that IE really botches opacity */
+}
+
+div.bigStep,
+div.bigStep div,
+#results,
+#results .inlineOption,
+#results .blockOption {
+	display: none;
+}
+
+#results .seen,
+#results .blockOption.seen,
+#results div.whatYouNeed,
+#results div.ajax div {
+	display: block;
+	zoom:1;
+}
+
+#results span.seen,
+#results .inlineOption.seen {
+	display: inline;
+}
+
+#results {
+	padding: 5px;
+}
+
+#results div.ajax {
+	margin: 0.5em 0 0 1em;
+	font-size: 90%;
+	border-left: 3px solid #DDD;
+	padding: 0.5em 0.75em;
+	width: 65%;
+	display: block;
+}
+
+/*For images in loaded topics: shrink to fit as window is resized */
+div.ajax img {
+	max-width: 100%;
+}
+
+div.bigStep {
+	padding: .25em .25em .25em 3.75em;
+	width: 90%;
+	margin-bottom: 1em;
+	position: relative;
+	_padding: .25em; /* IE6 Hack to remove the indendation */
+}
+
+.bigStep.stepAlt {
+	background-color: #FEFEE1;
+}
+
+#results h3 {
+	font-size: 1.3em;
+	margin: 0.4em 0;
+}
+
+.countNumber {
+	font-weight: bold;
+	color: #BBB;
+	display: block;
+	font-size: 2em;
+	line-height: 1;
+	position: absolute;
+	top: 8px;
+	left: 5px;
+	_display: none; /* IE6 Hack to hide these, since it doesn't want to play nice */
+}
+
+#results h3 .backToTop {
+	font-size: 66.66666667%;
+}
+
+/*
+ * I used to have this fade in, but that was too subtle.
+ * If you ever do it again, remember that to set the opacity in IE with filters, it needs hasLayout. 
+ * So, apply zoom:1 to it.
+ *
+ */
+span.loader {
+	display: block;
+	color: #ff962c;
+	font-style: italic;
+}
+
+
+/* 
+*	Adding this so the line length for tooltips doesn't get unruly 
+*	This also appeared to resolve an annoying issue where tooltips with longer lines appeared to not line up with their associated label
+*/
+.dijitTooltip {
+	max-width:750px;
+	*width: 725px; /* IE6/7 Hack, because they don't understand max-width */
+	line-height: 1.3;
+}
+
+.digitTooltip img {
+	max-width: 100%;
+}
+
+#dijit_ProgressBar_0 {
+	position: fixed;
+	top: 45%;
+	left: 5%;
+	width: 90%;
+	z-index: 999;
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
+}
+
+/* This needs a separate declaration for the BG color, otherwise IE chokes on the RGBA override */
+div.overlay {
+	background-color: white;
+}
+
+div.overlay {
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	_height: 1000px;
+	width: 100%;
+	_width: 100%;
+	background-color: rgba(255,255,255,0.65);
+
+}
+
+
+.error,
+.whatYouNeed    { padding: .8em; margin-bottom: 0; border: 2px solid #ddd; width: 75%; font-weight: bold;}
+
+.error      { background: #FBE3E4; color: #8a1f11; border-color: #FBC2C4; padding: 0.4em; margin-bottom: 3px;}
+
+.whatYouNeed { background: #E8FEFF; width: 40%; margin-bottom: .5em; padding: .6em;}
+.whatYouNeed p {margin:0;}
+.whatYouNeed ul {padding:0 0 0 1.35em; margin: 0;}
+.whatYouNeed li {font-weight: normal; margin-top: .5em;}
+
+
+
+/* For debugging ... add class="debug" to the HTML element and you'll see your files instead. */
+
+/* Hide the form */
+.debug #qa {
+	display: none;
+}
+
+/* Undo the hiding */
+.debug div.bigStep,
+.debug div.bigStep div,
+.debug #results,
+.debug #results .blockOption {
+	display: block;
+}
+
+.debug #results, .debug  #results  div.bigStep.seen, .debug  #results h2, .debug  #tableOfContents {
+	opacity: 1;
+}
+
+.debug #results span.seen,
+.debug #results .inlineOption {
+	display: inline;
+}
+
+.debug div.bigStep,
+.debug div.bigStep div {
+	border-width: 1px;
+	border-style: solid;
+	border-top-width: 27px;
+	padding: 5px;
+	margin: 5px;
+	position: relative;
+}
+
+.debug div.bigStep:before,
+.debug div.bigStep div:before {
+	content: "classes: " attr(class) " | ids: " attr(id);
+	display: block;
+	color: rgba(255,255,255,0.95);
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 1.0;
+	position: absolute;
+	top: -20px;
+	left: 5px;
+}
+
+.debug div.bigStep {
+	border-color: rgba(0,0,0,1.0);
+}
+
+.debug div.bigStep > div {
+	border-color: rgba(0,0,0,0.75);
+}
+
+.debug div.bigStep > div > div {
+	border-color: rgba(0,0,0,0.50);
+}
+
+.debug div.bigStep > div > div > div {
+	border-color: rgba(0,0,0,0.25);
+}
+

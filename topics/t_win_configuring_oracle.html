@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" /><meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Configuring an Oracle database" />
+<meta name="abstract" content="You can set up an Oracle database to work with Rational Focal Point." />
+<meta name="Description" content="You can set up an Oracle database to work with Rational Focal Point." />
+<meta name="DC.subject" content="databases, Oracle, configuring, installation, Oracle databases" />
+<meta name="keywords" content="databases, Oracle, configuring, installation, Oracle databases" />
+<meta name="DC.Relation" scheme="URI" content="http://www.oracle.com/technetwork/indexes/documentation/index.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/c_instl_setup_db.html" />
+<meta name="copyright" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Date" scheme="iso8601" content="2013-03-18" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="t_win_configuring_oracle" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Generated date: Mon Mar 18 07:52:22 EDT 2013-->
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="Start" href="../topics/c_instl_setup_db.html" />
+<title>Configuring an Oracle database for Rational Focal Point</title>
+
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/collapse.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/popup.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/resizer.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/thumbnail.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/tutorials.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.ccl.feedreader/scripts/readFeed.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"><!-- // leave this comment here --></script>
+
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/help.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/tutorials.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/samples.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.ccl.feedreader/css/feeds.css" />
+<noscript>
+<style type="text/css"><!--
+div.collapsecontent{display:block;}
+//--></style>
+</noscript></head>
+<body onload="javascript:resizeAtPageLoad();" onresize="javascript:resizeAllImages();" id="t_win_configuring_oracle">
+<h1 class="title topictitle1">Configuring an Oracle database</h1>
+<div class="body taskbody"><div>You can set up an Oracle database to work with <span class="keyword">Rational® Focal Point™</span>.</div><div class="section prereq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>An Oracle database version that is supported by <span class="keyword">Rational Focal Point</span> must
+be installed. For instructions, see your Oracle documentation or consult
+an Oracle database administrator (DBA).</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><p class="li stepsection">Before you install <span class="keyword">Rational Focal Point</span>,
+make sure that the following database configurations are completed.
+For instructions to configure the database, see the Oracle database
+documentation.</p><ol class="ol steps"><li class="li step stepexpand"><span class="ph cmd">Create an Oracle instance. Make sure that the <span class="keyword parmname parmname">NLS_SORT</span> parameter
+is set to <span class="keyword parmname parmname">BINARY_CI</span>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Create a database schema for <span class="keyword">Rational Focal Point</span>.</span> To store the Unicode characters as supported in the product,
+make sure that the database is created with a Unicode character set.
+For example: <samp class="ph codeph">AL32UTF8</samp>. </li>
+<li class="li step stepexpand"><span class="ph cmd">Create a user to hold the schema for <span class="keyword">Rational Focal Point</span>.
+For example: <samp class="ph codeph">CREATE USER focalpoint IDENTIFIED BY focalpoint</samp>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Create three table spaces: <kbd class="ph userinput">FP_DATA</kbd>, <kbd class="ph userinput">FP_INDEX</kbd> and <kbd class="ph userinput">FP_BIGOBJ</kbd>.</span> In the following example, a create statement is entered on
+a Windows machine to create a table space:  <pre class="pre codeblock"><code>CREATE BIGFILE TABLESPACE FP_INDEX DATAFILE 'C:\oracle\oracle_tbs_windows\FP_INDEX.dbf' SIZE 1G AUTOEXTEND ON EXTENT MANAGEMENT LOCAL AUTOALLOCATE;</code></pre>
+<div class="note note"><span class="notetitle">Note:</span> The
+table space can have any of these properties: <ul class="ul"><li class="li">A name other than <samp class="ph codeph">oracle_tbs</samp>. </li>
+<li class="li">A location in another directory.</li>
+<li class="li">A size larger or less than 1 GB. For large installations, you
+must allocate more space.</li>
+</ul>
+ </div>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">On the newly created table spaces, grant unlimited quota
+to the <samp class="ph codeph">focalpoint</samp> user.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Create a file named <span class="ph filepath">create_focalpoint_oracle.sql</span> that
+contains the following code:</span> <pre class="pre codeblock"><code>GRANT ALTER ANY INDEX TO &amp;1;
+GRANT ALTER ANY TABLE TO &amp;1;
+GRANT CREATE PROCEDURE TO &amp;1;
+GRANT CREATE SEQUENCE TO &amp;1;
+GRANT CREATE SESSION TO &amp;1;
+GRANT CREATE TABLE TO &amp;1;
+GRANT CREATE TABLESPACE TO &amp;1;
+GRANT CREATE VIEW TO &amp;1;</code></pre>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">In SQL*Plus, enter <span class="ph filepath">create_focalpoint_oracle.sql</span> as <kbd class="ph userinput">system</kbd> with
+the <samp class="ph codeph"><var class="keyword varname">focalpoint</var></samp> user as the first
+parameter. For example, <kbd class="ph userinput">@create_focalpoint_oracle.sql focalpoint</kbd>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Add the JDBC driver to the library location.</span>  The
+JDBC driver is included with the Oracle database installation. You
+can also download it from the Oracle website.<ul class="ul"><li class="li">For example, on Apache Tomcat server, add the JDBC driver to <span class="ph filepath"><var class="keyword varname">application
+server</var>\common\lib</span>. You must add <span class="ph filepath">ojdbc14.jar</span> driver
+for Oracle 10g and <span class="ph filepath">ojdbc6.jar</span> driver for Oracle
+11g.</li>
+<li class="li">For example, on <span class="keyword">WebSphere® Application Server</span>,
+add the JDBC driver to <span class="ph filepath"><var class="keyword varname">application server</var>\lib</span>.
+You must add <span class="ph filepath">ojdbc6.jar</span> from Oracle 11g for both
+Oracle 10g and Oracle 11g versions.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+</div>
+<div class="relinfo"><strong>Related information</strong>:<br />
+<div><img src="../sout.gif" alt="" /><a class="link" href="http://www.oracle.com/technetwork/indexes/documentation/index.html" target="_blank" title="(Opens in a new tab or window)">Oracle documentation</a></div>
+</div>
+</div><span class="runningfooter">
+<hr />
+<a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=rdf" target="_blank">Feedback</a> 
+</span>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" /><meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Starting the Rational Focal Point application and the components" />
+<meta name="DC.Relation" scheme="URI" content="../topics/c_post_install.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/t_install_rfpapp_was.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/t_install_financail_was.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/t_install_jazz_was.html" />
+<meta name="DC.Relation" scheme="URI" content="../topics/t_install_help_was.html" />
+<meta name="copyright" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Date" scheme="iso8601" content="2013-03-18" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="start_apps" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Generated date: Mon Mar 18 07:52:20 EDT 2013-->
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="Start" href="../topics/c_post_install.html" />
+<title>Starting the Rational Focal Point application and the components</title>
+
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/collapse.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/popup.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/resizer.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/thumbnail.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/tutorials.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.ccl.feedreader/scripts/readFeed.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"><!-- // leave this comment here --></script>
+
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/help.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/tutorials.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/samples.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.ccl.feedreader/css/feeds.css" />
+<noscript>
+<style type="text/css"><!--
+div.collapsecontent{display:block;}
+//--></style>
+</noscript></head>
+<body onload="javascript:resizeAtPageLoad();" onresize="javascript:resizeAllImages();" id="start_apps">
+<h1 class="title topictitle1">Starting the <span class="keyword">Rational Focal Point</span> application
+and the components</h1>
+<div class="body taskbody"><div class="section prereq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div><ol class="ol"><li class="li"><a class="xref" href="t_install_rfpapp_was.html" title="After you set up IBM WebSphere Application Server, you must deploy the IBM Rational Focal Point application."> Deploy the <span class="keyword">Rational® Focal Point™</span> application</a></li>
+<li class="li"><a class="xref" href="t_install_financail_was.html" title="Deploy the Financier.war and FinancierREST.war files to enable the financial analysis feature in Rational Focal Point.">Deploy the financial feature component</a></li>
+<li class="li"><a class="xref" href="t_install_jazz_was.html" title="To use the UI options for enabling integrations with the Rational solution for Collaborative Lifecycle Management (CLM), deploy the jazzui.war file.">Deploy the Jazz Web UI feature component</a></li>
+<li class="li"><a class="xref" href="t_install_help_was.html" title="To make the Rational Focal Point help system available, deploy the fphelp.war file.">Deploy the help system</a></li>
+</ol>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step"><span class="ph cmd">On
+the IBM WebSphere Integrated Solutions Console,
+click <span class="ph menucascade"><span class="ph uicontrol">Application</span> &gt; <span class="ph uicontrol">Enterprise
+Applications</span></span>.</span></li>
+<li class="li step"><span class="ph cmd">Select the following check boxes: <span class="ph uicontrol">fp_war</span>, <span class="ph uicontrol">Financier_war</span>, <span class="ph uicontrol">FinancierRest_war</span>, <span class="ph uicontrol">jazzui_war</span>,
+and <span class="ph uicontrol">fphelp_war</span>. </span></li>
+<li class="li step"><span class="ph cmd">Click <span class="ph uicontrol">Start</span>.</span> A
+green arrow indicates that the application started.</li>
+</ol>
+<div class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div><ul class="ul"><li class="li">Specify where to save your <span class="keyword">Rational Focal Point</span> logs.
+For more information, see <a class="xref" href="r_fp_logs.html" title="Depending on which application server you use, the log files for IBM Rational Focal Point are written to different locations.">Rational Focal Point log files</a>.</li>
+<li class="li">The administrator must start <span class="keyword">Rational Focal Point</span> and
+change the administrator password. For more information, see <a class="xref" href="t_starting_fp_for_the_first_time.html#t_starting_fp_for_the_first_time" title="After you install IBM Rational Focal Point, start the program and change the administrator password.">Starting Rational Focal Point for the first time</a>.</li>
+<li class="li"><a class="xref" href="t_enable_java_security_was.html" title="You can restrict the application access to local resources by enabling the Java 2 security option on WebSphere Application Server, version 7.0.0.17. WebSphere Application Server, version 7.0.0.17 requires ojdbc6.jar to connect to the Oracle database.">Enabling Java 2 security for Rational Focal Point on WebSphere Application Server</a></li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+</div>
+<div class="relinfo reltasks"><strong>Related tasks</strong>:<br />
+<div><a class="link" href="../topics/t_install_rfpapp_was.html" title="After you set up IBM WebSphere Application Server, you must deploy the IBM Rational Focal Point application.">Deploying the Rational Focal Point application</a></div>
+<div><a class="link" href="../topics/t_install_financail_was.html" title="Deploy the Financier.war and FinancierREST.war files to enable the financial analysis feature in Rational Focal Point.">Deploying the financial feature component</a></div>
+<div><a class="link" href="../topics/t_install_jazz_was.html" title="To use the UI options for enabling integrations with the Rational solution for Collaborative Lifecycle Management (CLM), deploy the jazzui.war file.">Deploying the Jazz Web UI feature component</a></div>
+<div><a class="link" href="../topics/t_install_help_was.html" title="To make the Rational Focal Point help system available, deploy the fphelp.war file.">Deploying the help system</a></div>
+</div>
+</div><span class="runningfooter">
+<hr />
+<a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=rdf" target="_blank">Feedback</a> 
+</span>
+</body>
+</html>

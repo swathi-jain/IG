@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" /><meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Starting the Apache Tomcat server" />
+<meta name="abstract" content="After you install Rational Focal Point, you must start the Apache Tomcat server." />
+<meta name="Description" content="After you install Rational Focal Point, you must start the Apache Tomcat server." />
+<meta name="DC.subject" content="servers, Apache Tomcat, starting, installation" />
+<meta name="keywords" content="servers, Apache Tomcat, starting, installation" />
+<meta name="DC.Relation" scheme="URI" content="../topics/c_post_install.html" />
+<meta name="copyright" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 1997, 2011" />
+<meta name="DC.Date" scheme="iso8601" content="2013-03-18" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="t_start_apps_apache" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Generated date: Mon Mar 18 07:52:20 EDT 2013-->
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="Start" href="../topics/c_post_install.html" />
+<title>Starting the Apache Tomcat server for Rational Focal Point</title>
+
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/collapse.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/popup.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/resizer.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/thumbnail.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.help.common.resources.doc/scripts/tutorials.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/com.ibm.ccl.feedreader/scripts/readFeed.js"><!-- leave this comment here --></script>
+<script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"><!-- // leave this comment here --></script>
+
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/help.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/tutorials.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.help.common.resources.doc/css/samples.css" />
+<link rel="stylesheet" type="text/css" href="PLUGINS_ROOT/com.ibm.ccl.feedreader/css/feeds.css" />
+<noscript>
+<style type="text/css"><!--
+div.collapsecontent{display:block;}
+//--></style>
+</noscript></head>
+<body onload="javascript:resizeAtPageLoad();" onresize="javascript:resizeAllImages();" id="t_start_apps_apache">
+<h1 class="title topictitle1">Starting the Apache Tomcat server</h1>
+<div class="body taskbody"><div>After you install <span class="keyword">Rational® Focal Point™</span>,
+you must start the Apache Tomcat server.</div><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><p class="li stepsection">To start the Apache Tomcat server from the command line:</p><ol class="ol steps"><li class="li step stepexpand"><span class="ph cmd">Change to the following directory: <span class="ph filepath"><var class="keyword varname">Apache
+Tomcat install directory</var>\bin</span></span> <div class="note note"><span class="notetitle">Note:</span> If
+you are using a 32-bit JRE on a 64-bit operating system, set the flag <samp class="ph codeph">FP_SERVER_64BIT</samp> to <samp class="ph codeph">false</samp> in
+the <span class="ph filepath">fpenv</span> file. On Windows, the file is available
+in <span class="ph filepath"><var class="keyword varname">Apache Tomcat install directory</var>\bin\fpenv.bat</span> and
+on Linux, <span class="ph filepath"><var class="keyword varname">Apache Tomcat install directory</var>\bin\fpenv.sh</span>.</div>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">Enter the following command: <kbd class="ph userinput">startup.bat</kbd></span> <p class="p">A separate Apache Tomcat console window opens. If you
+close this window, the server stops. Depending on your installation
+options, the server startup might take a few minutes. After the server
+is started, the startup time in millisecond is displayed in the Tomcat
+window. For example: <samp class="ph codeph">Server startup in 203645 ms</samp>.</p>
+</li>
+</ol>
+<div class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div><ul class="ul"><li class="li">Specify where to save your <span class="keyword">Rational Focal Point</span> logs.
+For more information, see <a class="xref" href="r_fp_logs.html" title="Depending on which application server you use, the log files for IBM Rational Focal Point are written to different locations.">Rational Focal Point log files</a>.</li>
+<li class="li">The administrator must start <span class="keyword">Rational Focal Point</span> and
+change the administrator password. For more information, see <a class="xref" href="t_starting_fp_for_the_first_time.html#t_starting_fp_for_the_first_time" title="After you install IBM Rational Focal Point, start the program and change the administrator password.">Starting Rational Focal Point for the first time</a>.</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+</div>
+</div><span class="runningfooter">
+<hr />
+<a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=rdf" target="_blank">Feedback</a> 
+</span>
+</body>
+</html>
